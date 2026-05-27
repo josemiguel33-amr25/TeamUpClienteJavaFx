@@ -34,12 +34,13 @@ public class PantallaLogRegControlador {
 
     @FXML
     private void crearCuenta() {
+
         SistemaDeJuego.cambiarPantalla("pantallaReg.fxml");
     }
 
     @FXML
     private void iniciarSesion() {
-        SistemaDeJuego.cambiarPantalla("pantallaLog");
+        SistemaDeJuego.cambiarPantalla("pantallaLog.fxml");
         // añadir que al darle esta pestaña comprobamos si tiene token, si lo tiene no cambiamos de pestaña y lo enviamos al servidor
     }
 

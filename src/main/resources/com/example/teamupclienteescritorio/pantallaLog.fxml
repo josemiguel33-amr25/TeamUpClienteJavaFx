@@ -19,7 +19,7 @@
             <Image url="@imagenes/campoFondo.png" />
          </image>
       </ImageView>
-      <Text fx:id="textoTeamUp" fill="WHITE" layoutX="677.0" layoutY="146.0" stroke="#302323" strokeDashOffset="5.0" strokeLineCap="BUTT" strokeMiterLimit="30.0" strokeType="OUTSIDE" strokeWidth="10.0" text="LOGO">
+      <Text fx:id="textoTeamUp" fill="WHITE" layoutX="652.0" layoutY="149.0" stroke="#302323" strokeDashOffset="5.0" strokeLineCap="BUTT" strokeMiterLimit="30.0" strokeType="OUTSIDE" strokeWidth="10.0" text="LOGO">
          <font>
             <Font name="Audiowide Regular" size="120.0" />
          </font>
@@ -27,37 +27,37 @@
             <ColorAdjust brightness="0.37" contrast="-0.54" hue="0.47" saturation="-0.23" />
          </effect>
       </Text>
-      <Label layoutX="626.0" layoutY="189.0" text="Iniciar Sesion" textFill="#2b0000" wrapText="true">
+      <Label layoutX="601.0" layoutY="201.0" text="Iniciar Sesion" textFill="#2b0000" wrapText="true">
          <font>
             <Font name="Alpenkreuzer" size="44.0" />
          </font>
       </Label>
-      <Label layoutX="734.0" layoutY="268.0" text="Correo Electronico" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="709.0" layoutY="280.0" text="Correo Electronico" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial" size="32.0" />
          </font>
       </Label>
-      <TextArea fx:id="correoElectronico" layoutX="652.0" layoutY="321.0" prefHeight="25.0" prefWidth="438.0">
+      <TextArea fx:id="correoElectronico" layoutX="627.0" layoutY="333.0" prefHeight="25.0" prefWidth="438.0">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </TextArea>
-      <Label layoutX="775.0" layoutY="386.0" text="Contraseña" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="750.0" layoutY="398.0" text="Contraseña" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Arial" size="32.0" />
          </font>
       </Label>
-      <PasswordField fx:id="contrasenia" layoutX="655.0" layoutY="448.0" prefHeight="52.0" prefWidth="440.0">
+      <PasswordField fx:id="contrasenia" layoutX="630.0" layoutY="460.0" prefHeight="52.0" prefWidth="440.0">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </PasswordField>
-      <CheckBox fx:id="recordarme" layoutX="660.0" layoutY="586.0" mnemonicParsing="false" text="Recordarme" textFill="WHITE">
+      <CheckBox fx:id="recordarme" layoutX="635.0" layoutY="598.0" mnemonicParsing="false" text="Recordarme" textFill="WHITE">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </CheckBox>
-      <Button fx:id="botonIniciarSesion" layoutX="727.0" layoutY="660.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="51.0" prefWidth="287.0" text="Iniciar sesion">
+      <Button fx:id="botonIniciarSesion" layoutX="702.0" layoutY="672.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="51.0" prefWidth="287.0" text="Iniciar sesion">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
@@ -82,5 +82,10 @@
             <Font name="Arial" size="32.0" />
          </font>
       </Label>
+      <ImageView fx:id="flechaAtras" fitHeight="91.0" fitWidth="94.0" layoutX="85.0" layoutY="52.0" onMouseClicked="#volverAtras" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/volverAtras.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

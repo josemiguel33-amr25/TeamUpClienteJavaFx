@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaCargaControlador">
    <children>
-      <ImageView fx:id="imagenFondo"  pickOnBounds="true">
+      <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
             <Image url="@imagenes/bruno1.png" />
          </image>
@@ -19,7 +19,7 @@
             <ColorAdjust brightness="0.07" contrast="-0.02" hue="-0.04" saturation="0.22" />
          </effect>
       </ImageView>
-      <Text fx:id="textoCualquierTecla" fill="#fff6f6" layoutX="103.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Presiona Cualquier Tecla">
+      <Text fx:id="textoCualquierTecla" fill="#fff6f6" layoutX="116.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Presiona Espacio">
          <font>
             <Font name="Audiowide Regular" size="44.0" />
          </font>
@@ -37,6 +37,30 @@
          </font>
          <effect>
             <ColorAdjust brightness="0.37" contrast="-0.54" hue="0.47" saturation="-0.23" />
+         </effect>
+      </Text>
+      <Text fx:id="textoCualquierTecla1" fill="#fff6f6" layoutX="99.0" layoutY="912.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamUp 2026">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.3684210479259491" green="0.2756335139274597" blue="0.2756335139274597" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Text>
+      <Text fx:id="textoCualquierTecla11" fill="#fff6f6" layoutX="285.0" layoutY="911.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Propiedad del futbol">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.3684210479259491" green="0.2756335139274597" blue="0.2756335139274597" />
+               </color>
+            </DropShadow>
          </effect>
       </Text>
    </children>

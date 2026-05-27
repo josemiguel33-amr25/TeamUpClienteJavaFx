@@ -1,5 +1,6 @@
 package com.example.teamupclienteescritorio.Controladores;
 
+import com.example.teamupclienteescritorio.Utilidades.SistemaDeJuego;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -71,5 +72,11 @@ public class PantallaLogControlador implements Initializable {
         System.out.println("Recordarme: " + recordar);
 
         // enviar json al servidor
+    }
+
+    @FXML
+    private void volverAtras() {
+
+        SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
     }
 }

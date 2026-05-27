@@ -85,4 +85,9 @@ public class PantallaRegControlador implements Initializable {
 
         // enviar json al servidor
     }
+
+    @FXML
+    private void volverAtras() {
+        SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
+    }
 }

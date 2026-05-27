@@ -90,5 +90,10 @@
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
+      <ImageView fx:id="flechaAtras" fitHeight="91.0" fitWidth="94.0" layoutX="85.0" layoutY="52.0" onMouseClicked="#volverAtras" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/volverAtras.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

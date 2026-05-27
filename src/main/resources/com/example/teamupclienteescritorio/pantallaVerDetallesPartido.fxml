@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="602.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaPartidosControlador">
+   <children>
+      <Label layoutX="90.0" layoutY="95.0" text="Equipo 1">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="429.0" layoutY="95.0" text="Equipo 2">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logo" fitHeight="72.0" fitWidth="93.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej7E1" layoutX="143.0" layoutY="152.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj1E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej2E1" layoutX="143.0" layoutY="209.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj2E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej3E1" layoutX="143.0" layoutY="264.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj3E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej4E1" layoutX="143.0" layoutY="320.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj4E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej5E1" layoutX="143.0" layoutY="377.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj5E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="265.0" layoutY="31.0" prefHeight="22.0" prefWidth="151.0" text="TITULO">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombrej6E1" layoutX="143.0" layoutY="435.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj6E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej7E1" layoutX="143.0" layoutY="494.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj7E1" fitHeight="72.0" fitWidth="93.0" layoutX="47.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="232.0" layoutY="94.0" prefHeight="22.0" prefWidth="142.0" text="solo verificados">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombrej7E11" layoutX="483.0" layoutY="165.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj1E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej2E11" layoutX="483.0" layoutY="222.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj2E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej3E11" layoutX="483.0" layoutY="277.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj3E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej4E11" layoutX="483.0" layoutY="333.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj4E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej5E11" layoutX="483.0" layoutY="390.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj5E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej6E11" layoutX="483.0" layoutY="448.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj6E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nombrej7E11" layoutX="483.0" layoutY="507.0" prefHeight="46.0" prefWidth="107.0" text="Libre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenj7E11" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

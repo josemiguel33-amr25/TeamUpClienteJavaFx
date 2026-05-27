@@ -4,6 +4,7 @@ import com.example.teamupclienteescritorio.Utilidades.SistemaDeJuego;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,9 +23,15 @@ public class InicioTeamUp extends Application {
         stage.setTitle("TeamUp V.1");
 
         scene.setOnKeyPressed(event -> {
-            System.out.println("TeamUp|MensajeInterno|Tecla detectada");
-            SistemaDeJuego.crearCliente();
-            SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
+
+            if (event.getCode() == KeyCode.SPACE) {
+
+                System.out.println("TeamUp|MensajeInterno|Tecla detectada");
+
+                SistemaDeJuego.crearCliente();
+
+                SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
+            }
         });
 
         stage.setMaximized(true);
