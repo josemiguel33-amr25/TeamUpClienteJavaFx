@@ -24,6 +24,9 @@ public class PantallaLogControlador implements Initializable {
     private ImageView imagenFondo;
 
     @FXML
+    private ImageView logo;
+
+    @FXML
     private TextArea correoElectronico;
 
     @FXML

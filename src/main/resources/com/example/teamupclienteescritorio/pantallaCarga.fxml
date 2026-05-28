@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -31,14 +32,6 @@
             </DropShadow>
          </effect>
       </Text>
-      <Text fx:id="textoTeamUp" fill="WHITE" layoutX="133.0" layoutY="434.0" stroke="#302323" strokeDashOffset="5.0" strokeLineCap="BUTT" strokeMiterLimit="30.0" strokeType="OUTSIDE" strokeWidth="10.0" text="LOGO">
-         <font>
-            <Font name="Audiowide Regular" size="120.0" />
-         </font>
-         <effect>
-            <ColorAdjust brightness="0.37" contrast="-0.54" hue="0.47" saturation="-0.23" />
-         </effect>
-      </Text>
       <Text fx:id="textoCualquierTecla1" fill="#fff6f6" layoutX="99.0" layoutY="912.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamUp 2026">
          <font>
             <Font name="Arial Bold" size="24.0" />
@@ -63,5 +56,15 @@
             </DropShadow>
          </effect>
       </Text>
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="241.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="botonAjustes" layoutX="51.0" layoutY="41.0" mnemonicParsing="false" onAction="#abrirAjustes" prefHeight="36.0" prefWidth="155.0" text="Ajustes">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

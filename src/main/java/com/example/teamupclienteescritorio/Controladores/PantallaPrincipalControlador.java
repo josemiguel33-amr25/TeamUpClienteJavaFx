@@ -21,7 +21,8 @@ public class PantallaPrincipalControlador implements Initializable {
     private ImageView imagenFondo;
 
     @FXML
-    private Text textoTeamUp;
+    private ImageView logo;
+
 
     @FXML
     private ImageView tarjetavisita;

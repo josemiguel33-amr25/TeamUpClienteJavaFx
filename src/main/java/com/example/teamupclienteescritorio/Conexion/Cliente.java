@@ -31,8 +31,6 @@ public class Cliente {
             try
             {
                 while ((mensaje = lector.readLine()) != null) {
-                    //DEPURACION
-                    System.out.println(mensaje);
                     String mensajeFinal = mensaje; //Si no lo hago asi no funcionab
                     Platform.runLater(() -> {
                         // hacer buzon
@@ -58,8 +56,8 @@ public class Cliente {
     public void cargarPropiedades() {
         try {
             System.out.println("TeamUp|MensajeInterno| Entro en cargar propiedades");
-            InputStream inEm = Cliente.class.getResourceAsStream("/com/example/teamupclienteescritorio/configuracion.properties");
-            propiedades.load(inEm);
+            FileInputStream fis = new FileInputStream("TeamUp/configuracion.properties");
+            propiedades.load(fis);
             System.out.println("TeamUp|MensajeInterno| propiedades puerto " + propiedades.getProperty("port"));
         } catch (Exception em) {
             System.out.println("TeamUp|Error|EM1|");

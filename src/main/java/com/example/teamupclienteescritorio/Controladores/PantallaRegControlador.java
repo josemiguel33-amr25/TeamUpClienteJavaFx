@@ -20,6 +20,9 @@ public class PantallaRegControlador implements Initializable {
     private ImageView imagenFondo;
 
     @FXML
+    private ImageView logo;
+
+    @FXML
     private Text textoTeamUp;
 
     @FXML

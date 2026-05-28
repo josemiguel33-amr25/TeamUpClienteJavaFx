@@ -7,6 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -16,6 +17,9 @@ public class PantallaPartidosControlador implements Initializable {
 
     @FXML
     private TextField titulo;
+
+    @FXML
+    private ImageView logo;
 
     @FXML
     private TextField precio;

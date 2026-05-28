@@ -21,7 +21,6 @@ public class SistemaDeJuego { // Clase que emula el sistema de juego del server(
             FXMLLoader loader = new FXMLLoader(SistemaDeJuego.class.getResource("/com/example/teamupclienteescritorio/" + nombreFxml));
 
             Scene escena = new Scene(loader.load());
-
             stagePrincipal.setScene(escena);
 
             System.out.println("TeamUp|MensajeInterno|Hemos cambiado la pantalla a " + stagePrincipal.getTitle());
@@ -29,6 +28,22 @@ public class SistemaDeJuego { // Clase que emula el sistema de juego del server(
         } catch (Exception em) {
             System.out.println("TeamUp|Error|EM3");
             em.printStackTrace();
+        }
+    }
+
+    public static void abrirPopup(String nombreFxml, String titulo) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(SistemaDeJuego.class.getResource("/com/example/teamupclienteescritorio/" + nombreFxml));
+            Scene scene = new Scene(loader.load());
+            Stage stage = new Stage();
+            stage.setTitle(titulo);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (Exception em) {
+            System.out.println("TeamUp|Error|EM3");
         }
     }
 

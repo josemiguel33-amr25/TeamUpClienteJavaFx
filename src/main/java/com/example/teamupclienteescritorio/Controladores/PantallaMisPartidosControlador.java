@@ -23,7 +23,8 @@ public class PantallaMisPartidosControlador implements Initializable {
     private ImageView imagenFondo;
 
     @FXML
-    private Text textoTeamUp;
+    private ImageView logo;
+
 
     @FXML
     private ImageView tarjetavisita;
