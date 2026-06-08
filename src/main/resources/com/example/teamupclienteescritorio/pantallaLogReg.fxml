@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaLogRegControlador">
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaLogRegControlador">
    <children>
       <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
@@ -17,12 +17,12 @@
             <ColorAdjust brightness="0.07" contrast="-0.02" hue="-0.04" saturation="0.22" />
          </effect>
       </ImageView>
-      <Button fx:id="botonCrear" layoutX="662.0" layoutY="296.0" mnemonicParsing="false" onAction="#crearCuenta" prefHeight="118.0" prefWidth="342.0" text="Crear Cuenta">
+      <Button fx:id="botonCrear" layoutX="632.0" layoutY="268.0" mnemonicParsing="false" onAction="#crearCuenta" prefHeight="118.0" prefWidth="342.0" text="Crear Cuenta">
          <font>
             <Font name="Arial Black" size="40.0" />
          </font>
       </Button>
-      <Button fx:id="iniciarBoton" layoutX="641.0" layoutY="498.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="118.0" prefWidth="392.0" text="Iniciar Sesion">
+      <Button fx:id="iniciarBoton" layoutX="611.0" layoutY="481.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="118.0" prefWidth="392.0" text="Iniciar Sesion">
          <font>
             <Font name="Arial Black" size="40.0" />
          </font>

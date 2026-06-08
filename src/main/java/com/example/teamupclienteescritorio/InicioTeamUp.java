@@ -1,7 +1,8 @@
 package com.example.teamupclienteescritorio;
 
-import com.example.teamupclienteescritorio.Utilidades.SistemaDeJuego;
+import com.example.teamupclienteescritorio.utilidades.SistemaDeJuego;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -32,6 +33,16 @@ public class InicioTeamUp extends Application {
 
                 SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
             }
+        });
+
+        stage.setOnCloseRequest(event -> {
+
+            if (SistemaDeJuego.cliente != null) {
+                SistemaDeJuego.cliente.salir();
+            } else {
+                Platform.exit();
+            }
+
         });
 
         stage.setMaximized(true);

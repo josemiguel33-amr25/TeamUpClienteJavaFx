@@ -7,33 +7,32 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaPrincipalControlador">
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaPrincipalControlador">
    <children>
       <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
             <Image url="@imagenes/campoFondo.png" />
          </image>
       </ImageView>
-      <StackPane layoutX="979.0" layoutY="22.0" prefHeight="134.0" prefWidth="622.0">
+      <StackPane layoutX="824.0" layoutY="22.0" prefHeight="134.0" prefWidth="622.0">
          <children>
-            <ImageView fx:id="tarjetavisita" fitHeight="150.0" fitWidth="622.0" pickOnBounds="true" preserveRatio="true" />
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <ImageView fx:id="tarjetavisita" fitHeight="134.0" fitWidth="622.0" pickOnBounds="true" preserveRatio="false" />
+            <HBox alignment="CENTER_LEFT" prefHeight="134.0" prefWidth="622.0" spacing="15.0">
                <children>
-                  <ImageView fx:id="imagenPerfil" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imagenRango" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <ImageView fx:id="imagenPerfil" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="false" />
+                  <ImageView fx:id="imagenRango" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <VBox alignment="CENTER_RIGHT" spacing="5.0">
                      <children>
                         <Label fx:id="monedas" text="Monedas">
                            <font>
                               <Font size="20.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets top="40.0" />
-                           </VBox.margin>
                         </Label>
                         <Label fx:id="reputacion" text="Reputacion">
                            <font>
@@ -43,40 +42,43 @@
                      </children>
                   </VBox>
                </children>
+               <padding>
+                  <Insets left="15.0" right="20.0" />
+               </padding>
             </HBox>
          </children>
       </StackPane>
-      <Button fx:id="partidos" alignment="TOP_LEFT" layoutX="768.0" layoutY="264.0" mnemonicParsing="false" onAction="#irPartidos" prefHeight="202.0" prefWidth="642.0" text="Partidos" textAlignment="JUSTIFY">
+      <Button fx:id="partidos" alignment="TOP_LEFT" layoutX="768.0" layoutY="242.0" mnemonicParsing="false" onAction="#irPartidos" prefHeight="202.0" prefWidth="642.0" text="Partidos" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="mercado" alignment="TOP_LEFT" layoutX="248.0" layoutY="265.0" mnemonicParsing="false" onAction="#irMercado" prefHeight="202.0" prefWidth="522.0" text="Mercado" textAlignment="JUSTIFY">
+      <Button fx:id="mercado" alignment="TOP_LEFT" layoutX="248.0" layoutY="243.0" mnemonicParsing="false" onAction="#irMercado" prefHeight="202.0" prefWidth="522.0" text="Mercado" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="ranking" alignment="TOP_LEFT" layoutX="247.0" layoutY="466.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Ranking" textAlignment="JUSTIFY">
+      <Button fx:id="ranking" alignment="TOP_LEFT" layoutX="247.0" layoutY="444.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Ranking" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="rangos" alignment="TOP_LEFT" layoutX="509.0" layoutY="466.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Rangos" textAlignment="JUSTIFY">
+      <Button fx:id="rangos" alignment="TOP_LEFT" layoutX="509.0" layoutY="444.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Rangos" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="tienda" alignment="TOP_LEFT" layoutX="771.0" layoutY="467.0" mnemonicParsing="false" onAction="#irTienda" prefHeight="190.0" prefWidth="638.0" text="Sobres" textAlignment="JUSTIFY">
+      <Button fx:id="tienda" alignment="TOP_LEFT" layoutX="771.0" layoutY="445.0" mnemonicParsing="false" onAction="#irTienda" prefHeight="190.0" prefWidth="638.0" text="Tienda" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="miPerfil" alignment="TOP_LEFT" layoutX="245.0" layoutY="657.0" mnemonicParsing="false" onAction="#irMiPerfil" prefHeight="190.0" prefWidth="896.0" text="Mis Perfil" textAlignment="JUSTIFY">
+      <Button fx:id="miPerfil" alignment="TOP_LEFT" layoutX="245.0" layoutY="635.0" mnemonicParsing="false" onAction="#irMiPerfil" prefHeight="190.0" prefWidth="896.0" text="Mi perfil" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="salir" alignment="TOP_LEFT" layoutX="1135.0" layoutY="657.0" mnemonicParsing="false" onAction="#salir" prefHeight="190.0" prefWidth="277.0" text="Salir" textAlignment="JUSTIFY">
+      <Button fx:id="salir" alignment="TOP_LEFT" layoutX="1135.0" layoutY="635.0" mnemonicParsing="false" onAction="#salir" prefHeight="190.0" prefWidth="277.0" text="Salir" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>

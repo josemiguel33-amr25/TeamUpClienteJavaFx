@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="602.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaVerDetallesPartidoControlador">
+<AnchorPane fx:id="root" prefHeight="602.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaVerDetallesPartidoControlador">
    <children>
       <Label layoutX="127.0" layoutY="95.0" text="Equipo 1">
          <font>
@@ -26,7 +26,7 @@
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej7E1" layoutX="93.0" layoutY="128.0" prefHeight="46.0" prefWidth="157.0" text="Libre">
+      <Label fx:id="nombrej1E1" layoutX="93.0" layoutY="128.0" prefHeight="46.0" prefWidth="157.0" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -76,11 +76,6 @@
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="302.0" layoutY="24.0" prefHeight="27.0" prefWidth="255.0" text="TITULO" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font>
-      </Label>
       <Label fx:id="nombrej6E1" layoutX="92.0" layoutY="411.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -101,11 +96,6 @@
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="quienPuedeUnirse" layoutX="596.0" layoutY="53.0" prefHeight="22.0" prefWidth="142.0" text="solo verificados">
-         <font>
-            <Font name="Arial Bold" size="18.0" />
-         </font>
-      </Label>
       <Label fx:id="nombrej1E2" layoutX="461.0" layoutY="126.0" prefHeight="46.0" prefWidth="129.0" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -176,17 +166,17 @@
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="botonAccion" layoutX="363.0" layoutY="555.0" mnemonicParsing="false" onAction="#accionPartido" prefHeight="34.0" prefWidth="117.0" text="Boton">
+      <Button fx:id="botonAccion" layoutX="294.0" layoutY="555.0" mnemonicParsing="false" onAction="#accionPartido" prefHeight="34.0" prefWidth="214.0" text="Boton" visible="false">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="quienPuedeUnirse1" layoutX="638.0" layoutY="26.0" prefHeight="22.0" prefWidth="150.0" text="Estado">
+      <Label layoutX="339.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" text="Estado:">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="equipoSeleccion" layoutX="179.0" layoutY="557.0" prefWidth="150.0" promptText="Equipo" visible="false" />
+      <ComboBox fx:id="equipoSeleccion" layoutX="179.0" layoutY="557.0" prefWidth="150.0" promptText=" Equipo Ganador" visible="false" />
       <ComboBox fx:id="puntuacionJ1E1" layoutX="197.0" layoutY="139.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
       <ComboBox fx:id="puntuacionJ2E1" layoutX="197.0" layoutY="195.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
       <ComboBox fx:id="puntuacionJ3E1" layoutX="196.0" layoutY="250.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
@@ -216,5 +206,24 @@
       <Spinner fx:id="golesJ6E2" layoutX="714.0" layoutY="420.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="golesJ7E2" layoutX="714.0" layoutY="480.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <ComboBox fx:id="mvpJugadores" layoutX="521.0" layoutY="560.0" prefHeight="26.0" prefWidth="76.0" promptText="MVP" visible="false" />
+      <Label fx:id="estadoPartido" layoutX="414.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" text="Estado">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="asisJ1E1" layoutX="232.0" layoutY="140.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ2E1" layoutX="232.0" layoutY="192.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ3E1" layoutX="232.0" layoutY="248.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ4E1" layoutX="232.0" layoutY="306.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ5E1" layoutX="232.0" layoutY="363.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ6E1" layoutX="232.0" layoutY="425.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ7E1" layoutX="232.0" layoutY="480.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ1E2" layoutX="629.0" layoutY="138.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ2E2" layoutX="629.0" layoutY="190.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ3E2" layoutX="630.0" layoutY="245.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ4E2" layoutX="631.0" layoutY="301.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ5E2" layoutX="630.0" layoutY="361.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ6E2" layoutX="630.0" layoutY="419.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ7E2" layoutX="629.0" layoutY="474.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
    </children>
 </AnchorPane>
