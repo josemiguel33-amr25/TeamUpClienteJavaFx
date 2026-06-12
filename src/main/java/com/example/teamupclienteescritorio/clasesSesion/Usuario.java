@@ -14,12 +14,13 @@ public class Usuario {
     private int asistencias;
     private int cantidadMvp;
     private String fotoPerfil;
+    private String nombreRango;
     // Cosmeticos
     private CosmeticoUsuario cosmeticoUsuario;
     // Carta
     private CartaUsuario cartaUsuario;
 
-    public Usuario(int idUsuario, String nombre, String correo, boolean verificado, int monedas, int reputacion, int rango, int puntosRango, int partidosJugados, int goles, int asistencias, int cantidadMvp, String fotoPerfil, CosmeticoUsuario cosmeticoUsuario, CartaUsuario cartaUsuario) {
+    public Usuario(int idUsuario, String nombre, String correo, boolean verificado, int monedas, int reputacion, int rango, int puntosRango, int partidosJugados, int goles, int asistencias, int cantidadMvp, String fotoPerfil, CosmeticoUsuario cosmeticoUsuario, CartaUsuario cartaUsuario, String nombreRango) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correo = correo;
@@ -35,6 +36,7 @@ public class Usuario {
         this.fotoPerfil = fotoPerfil;
         this.cosmeticoUsuario = cosmeticoUsuario;
         this.cartaUsuario = cartaUsuario;
+        this.nombreRango = nombreRango;
     }
 
     public CartaUsuario getCartaUsuario() {
@@ -147,4 +149,7 @@ public class Usuario {
         this.idUsuario = idUsuario;
     }
 
+    public String getNombreRango() {
+        return nombreRango;
+    }
 }

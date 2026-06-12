@@ -116,7 +116,6 @@ public class PantallaMisSobresControlador implements Initializable {
         tarjeta.setSpacing(10);
         tarjeta.setPrefWidth(300);
         tarjeta.setPrefHeight(500);
-        tarjeta.setStyle("-fx-border-color: black; -fx-padding: 10;");
         tarjeta.setAlignment(Pos.CENTER);
         tarjeta.setMinHeight(Region.USE_PREF_SIZE);
 

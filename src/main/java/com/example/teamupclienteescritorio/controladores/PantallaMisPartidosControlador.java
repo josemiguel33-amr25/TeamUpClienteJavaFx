@@ -85,7 +85,7 @@ public class PantallaMisPartidosControlador implements Initializable {
         try {
             String estado = estadoPartidosFiltro.getValue();
 
-            if (estado == null || estado.isBlank()) {
+            if (estado == null) {
                 estado = "abierto";
             }
 
@@ -113,7 +113,6 @@ public class PantallaMisPartidosControlador implements Initializable {
         for (PartidoSimplificado p : Sesion.getSesion().getPartidosSimplificados()) {
 
             HBox tarjeta = new HBox(20);
-            tarjeta.setStyle("-fx-border-color: black; -fx-padding: 15;");
             tarjeta.setMaxWidth(Double.MAX_VALUE);
             tarjeta.prefWidthProperty().bind(contenedorPartidos.widthProperty().subtract(25));
 

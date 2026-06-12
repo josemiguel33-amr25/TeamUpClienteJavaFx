@@ -51,7 +51,9 @@ public class Cliente {
         }
     }
 
-
+    public boolean isConectado() {
+        return socket != null;
+    }
 
     public void salir() {
         // cuando llamamos a esta funcion ademas de salir y cerrar la aplicacion tambien cerramos la sesion con el servidor llamando a la funcion del servidor

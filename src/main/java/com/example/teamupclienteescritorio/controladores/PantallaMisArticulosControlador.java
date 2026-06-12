@@ -1,5 +1,6 @@
 package com.example.teamupclienteescritorio.controladores;
 
+import com.example.teamupclienteescritorio.clasesMensajes.CosmeticoSimplificado;
 import com.example.teamupclienteescritorio.clasesMensajes.MercadoSimplificado;
 import com.example.teamupclienteescritorio.logicaAplicacion.Sesion;
 import com.example.teamupclienteescritorio.utilidades.SistemaDeJuego;
@@ -24,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class PantallaMercadoControlador implements Initializable {
+public class PantallaMisArticulosControlador implements Initializable {
 
     @FXML
     private AnchorPane root;
@@ -51,7 +52,7 @@ public class PantallaMercadoControlador implements Initializable {
     private Label reputacion;
 
     @FXML
-    private Button misArticulos;
+    private Button botonIrMercado;
 
     @FXML
     private Button botonVenderArticulo;
@@ -69,16 +70,16 @@ public class PantallaMercadoControlador implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SistemaDeJuego.cargarDatosUsuario(imagenPerfil, imagenRango, tarjetavisita, monedas, reputacion);
 
+        imagenFondo.fitWidthProperty().bind(root.widthProperty());
+        imagenFondo.fitHeightProperty().bind(root.heightProperty());
+
         contenedorCosmeticos.setHgap(30);
         contenedorCosmeticos.setVgap(40);
         contenedorCosmeticos.setAlignment(Pos.TOP_CENTER);
-        contenedorCosmeticos.setPadding(new Insets(40, 40, 40, 40));
+        contenedorCosmeticos.setPadding(new Insets(40, 40, 100, 40));
 
         cargarMercado();
-        imagenFondo.fitWidthProperty().bind(root.widthProperty());
-        imagenFondo.fitHeightProperty().bind(root.heightProperty());
     }
-
 
     private void cargarMercado() {
         contenedorCosmeticos.getChildren().clear();
@@ -95,6 +96,8 @@ public class PantallaMercadoControlador implements Initializable {
 
         tarjeta.setSpacing(10);
         tarjeta.setAlignment(Pos.CENTER);
+
+
         tarjeta.setPrefWidth(250);
         tarjeta.setPrefHeight(400);
 
@@ -102,23 +105,23 @@ public class PantallaMercadoControlador implements Initializable {
         imagenArticulo.setFitWidth(180);
         imagenArticulo.setFitHeight(220);
 
-        // placeholder por ahoara
+        // placeholder por ahora
         imagenArticulo.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
 
         Label vendedor = new Label("Vendedor: " + articulo.getNombreVendedor());
         Label nombreArticulo = new Label(articulo.getNombreArticulo());
         Label precio = new Label("💰 " + articulo.getPrecio() + " monedas");
 
-        Button comprar = new Button("Comprar");
-        comprar.setUserData(articulo.getIdArticulo()); // id para poder usarlo cuando le demos al boton y mandar comprar al servidor
-        comprar.setOnAction(this::comprarArticulo);
+        Button quitar = new Button("Quitar del Mercado");
+        quitar.setUserData(articulo.getIdArticulo());
+        quitar.setOnAction(this::quitarDelMercado);
 
-        tarjeta.getChildren().addAll(imagenArticulo, vendedor, nombreArticulo, precio, comprar);
+        tarjeta.getChildren().addAll(imagenArticulo, vendedor, nombreArticulo, precio, quitar);
 
         contenedorCosmeticos.getChildren().add(tarjeta);
     }
 
-    private void comprarArticulo(ActionEvent event) {
+    private void quitarDelMercado(ActionEvent event) {
         try {
             Button boton = (Button) event.getSource();
             int idArticulo = (int) boton.getUserData();
@@ -126,7 +129,7 @@ public class PantallaMercadoControlador implements Initializable {
             Map<String, Object> mensaje = new HashMap<>();
             Map<String, String> data = new HashMap<>();
 
-            data.put("tipoCosmeticos", "comprarArticulo");
+            data.put("tipoCosmeticos", "quitarArticulo");
             data.put("idArticuloMercado", String.valueOf(idArticulo));
 
             mensaje.put("tipo", "cosmeticos");
@@ -139,18 +142,15 @@ public class PantallaMercadoControlador implements Initializable {
             System.out.println("TeamUp|Error|EM9");
         }
     }
-
-
-
     @FXML
-    private void verMisArticulos() {
+    private void irMercado() {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
             Map<String, Object> mensaje = new HashMap<>();
             Map<String, String> datos = new HashMap<>();
 
-            datos.put("tipoCosmeticos", "verMisArticulosMercado");
+            datos.put("tipoCosmeticos", "mercado");
 
             mensaje.put("tipo", "cosmeticos");
             mensaje.put("data", datos);
@@ -161,7 +161,10 @@ public class PantallaMercadoControlador implements Initializable {
         }
     }
 
-
+    @FXML // funcion lo mismo que pasa en la otra parte lo he simplificado para darle a un boton
+    private void abrirVentaArticulo() {
+        SistemaDeJuego.abrirPopup("pantallaVentaArticulo.fxml", "Vender Articulo");
+    }
 
     @FXML
     private void irMenuPrincipal() {

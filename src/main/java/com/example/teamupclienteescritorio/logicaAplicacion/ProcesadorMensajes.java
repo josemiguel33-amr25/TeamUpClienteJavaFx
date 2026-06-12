@@ -1,8 +1,6 @@
 package com.example.teamupclienteescritorio.logicaAplicacion;
 
-import com.example.teamupclienteescritorio.clasesMensajes.Participante;
-import com.example.teamupclienteescritorio.clasesMensajes.PartidoSimplificado;
-import com.example.teamupclienteescritorio.clasesMensajes.SobreSimplificado;
+import com.example.teamupclienteescritorio.clasesMensajes.*;
 import com.example.teamupclienteescritorio.clasesSesion.CartaUsuario;
 import com.example.teamupclienteescritorio.clasesSesion.CosmeticoUsuario;
 import com.example.teamupclienteescritorio.clasesSesion.DatosPartido;
@@ -87,10 +85,140 @@ public class ProcesadorMensajes {
                     Map<String, String> datosComprarSobre = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, String>>() {});
                     procesarComprarSobre(status, mensajeServidor, codigo, datosComprarSobre);
                     break;
+                case "obtenerElementosMercado":
+                    Map<String, Object> datosMercadoGlobal = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, Object>>() {});
+                    procesarObjetosMercado(status, mensajeServidor, datosMercadoGlobal);
+                    break;
+                case "comprarArticulo":
+                    Map<String, String> datosComprarArticulo = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, String>>() {});
+                    procesarCompraMercado(status, mensajeServidor, datosComprarArticulo);
+                    break;
+                case "obtenerElementosUsuarioMercado":
+                    Map<String, Object> datosArticulosUsuario = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, Object>>() {});
+                    procesarObjetosMercadoUsuario(status, mensajeServidor, datosArticulosUsuario);
+                    break;
+                case "ranking":
+                    Map<String, Object> datosRanking = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, Object>>() {});
+                    procesarJugadoresRanking(status, mensajeServidor, datosRanking);
+                    break;
+                case "obtenerInventarioUsuario":
+                    Map<String, Object> datosInventarioUsuario = mapper.convertValue(mensajeMapita.get("datos"), new TypeReference<Map<String, Object>>() {});
+                    procesarInventarioJugador(status, mensajeServidor, datosInventarioUsuario);
+                    break;
+                case "ponerArticuloVenta":
+                    procesarPonerArticuloVenta(status, mensajeServidor);
+                    break;
+                case "quitarArticuloMercado":
+                    procesarQuitarArticulo(status, mensajeServidor);
+                    break;
+                case "cambiarCosmetico":
+                    procesarCambiarCosmetico(status, mensajeServidor);
+                    break;
             }
         } catch (Exception em) {
             System.out.println("TeamUp|Error|EM5 " + em.getMessage());
         }
+    }
+
+    public void procesarCambiarCosmetico(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+    }
+
+    public void procesarQuitarArticulo(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+
+        if (status.equalsIgnoreCase("perfecto"))
+            pedirMasInfoMisArticulos();
+    }
+
+    private void pedirMasInfoInventario() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            Map<String, Object> mensaje = new HashMap<>();
+            Map<String, String> datos = new HashMap<>();
+
+            mensaje.put("tipo", "inventarioJugador");
+
+            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
+        }
+    }
+
+    private void pedirMasInfoMisArticulos() { // la misma idea que pedirMasInfoPartidos
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            Map<String, Object> mensaje = new HashMap<>();
+            Map<String, String> datos = new HashMap<>();
+
+            datos.put("tipoCosmeticos", "verMisArticulosMercado");
+
+            mensaje.put("tipo", "cosmeticos");
+            mensaje.put("data", datos);
+
+            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
+        }
+    }
+
+    public void procesarPonerArticuloVenta(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+        if (status.equalsIgnoreCase("perfecto")) {
+            SistemaDeJuego.cerrarPopup();
+            pedirMasInfoInventario();
+        }
+    }
+
+    public void procesarInventarioJugador(String status, String mensajeServidor, Map<String,Object> inventarioJugador) {
+        if (status.equalsIgnoreCase("perfecto")) {
+            ObjectMapper mapper = new ObjectMapper();
+            List<CosmeticoSimplificado> inventario = mapper.convertValue(inventarioJugador.get("cosmeticos"), new TypeReference<List<CosmeticoSimplificado>>() {});
+            Sesion.getSesion().setInventarioJugador(inventario);
+            SistemaDeJuego.cambiarPantalla("pantallaInventario.fxml");
+        } else
+            SistemaDeJuego.abrirMensaje(mensajeServidor);
+    }
+
+    public void procesarJugadoresRanking(String status, String mensajeServidor, Map<String,Object> datosRanking) {
+        if (status.equalsIgnoreCase("perfecto")) {
+            ObjectMapper mapper = new ObjectMapper();
+            List<UsuarioSimplificado> usuariosRanking = mapper.convertValue(datosRanking.get("jugadores"), new TypeReference<List<UsuarioSimplificado>>() {});
+            Sesion.getSesion().setUsuariosRanking(usuariosRanking);
+            SistemaDeJuego.cambiarPantalla("pantallaRanking.fxml");
+        } else
+            SistemaDeJuego.abrirMensaje(mensajeServidor);
+    }
+
+    public void procesarObjetosMercadoUsuario(String status, String mensajeServidor, Map<String,Object> datosArtiulosUsuario) {
+        if (status.equalsIgnoreCase("perfecto")) {
+            ObjectMapper mapper = new ObjectMapper();
+            List<MercadoSimplificado> objetosMercado = mapper.convertValue(datosArtiulosUsuario.get("elementos"), new TypeReference<List<MercadoSimplificado>>() {});
+            Sesion.getSesion().setObjetosMercadosUsuario(objetosMercado);
+            SistemaDeJuego.cambiarPantalla("pantallaMisArticulos.fxml");
+        } else
+            SistemaDeJuego.abrirMensaje(mensajeServidor);
+    }
+
+    public void procesarCompraMercado(String status, String mensajeServidor, Map<String, String> datosComprarArticulo) {
+        if (status.equalsIgnoreCase("perfecto")) {
+            int monedas = Integer.parseInt(datosComprarArticulo.get("nuevasMonedas"));
+            Sesion.getSesion().getUsuario().setMonedas(monedas);
+            SistemaDeJuego.cambiarPantalla("pantallaMercado.fxml");
+        }
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+    }
+
+    public void procesarObjetosMercado(String status, String mensajeServidor, Map<String,Object> datosMercadoGlobal) {
+        if (status.equalsIgnoreCase("perfecto")) {
+            ObjectMapper mapper = new ObjectMapper();
+            List<MercadoSimplificado> objetosMercado = mapper.convertValue(datosMercadoGlobal.get("elementos"), new TypeReference<List<MercadoSimplificado>>() {});
+            Sesion.getSesion().setObjetosMercadosGlobal(objetosMercado);
+            SistemaDeJuego.cambiarPantalla("pantallaMercado.fxml");
+        } else
+            SistemaDeJuego.abrirMensaje(mensajeServidor);
     }
 
     public void procesarComprarSobre(String status, String mensajeServidor, String codigo, Map<String,String> datosComprarSobre) {
@@ -135,6 +263,10 @@ public class ProcesadorMensajes {
 
     public void procesarCrearPartido(String status, String mensajeServidor, String codigo) {
         SistemaDeJuego.abrirMensaje(mensajeServidor);
+
+        if (status.equalsIgnoreCase("perfecto")) {
+            SistemaDeJuego.cerrarPopup(); // lo que explico en sistema de juego, una vez se crea el partido no tiene sentido que siga abierto el pop up de crear partido
+        }
     }
 
     public void procesarFinalizarPartido(String status, String mensajeServidor, String codigo) {
@@ -237,7 +369,7 @@ public class ProcesadorMensajes {
         if (status.equalsIgnoreCase("perfecto")) {
             CartaUsuario cartaUsuario = new CartaUsuario(Integer.parseInt(mapaDatos.get("mediaJugador")), Integer.parseInt(mapaDatos.get("ritmo")), Integer.parseInt(mapaDatos.get("tiro")), Integer.parseInt(mapaDatos.get("pase")), Integer.parseInt(mapaDatos.get("regate")), Integer.parseInt(mapaDatos.get("defensa")), Integer.parseInt(mapaDatos.get("fisico")), Integer.parseInt(mapaDatos.get("mediaPortero")), Integer.parseInt(mapaDatos.get("posicionamiento")), Integer.parseInt(mapaDatos.get("reflejos")), Integer.parseInt(mapaDatos.get("manejo")), Integer.parseInt(mapaDatos.get("estirada")), Integer.parseInt(mapaDatos.get("saque")), mapaDatos.get("posicion1"), mapaDatos.get("posicion2"), Integer.parseInt(mapaDatos.get("velocidad")));
             CosmeticoUsuario cosmeticoUsuario = new CosmeticoUsuario(mapaDatos.get("tarjetaVisita"), mapaDatos.get("titulo"), mapaDatos.get("cartaCosmetico"));
-            Usuario usuario = new Usuario(Integer.parseInt(mapaDatos.get("idUsuario")), mapaDatos.get("nombre"), mapaDatos.get("correo"), Boolean.parseBoolean(mapaDatos.get("verificado")), Integer.parseInt(mapaDatos.get("monedas")), Integer.parseInt(mapaDatos.get("reputacion")), Integer.parseInt(mapaDatos.get("rango")), Integer.parseInt(mapaDatos.get("puntosRango")), Integer.parseInt(mapaDatos.get("partidosJugados")), Integer.parseInt(mapaDatos.get("goles")), Integer.parseInt(mapaDatos.get("asistencias")), Integer.parseInt(mapaDatos.get("mvp")), mapaDatos.get("fotoperfil"), cosmeticoUsuario, cartaUsuario);
+            Usuario usuario = new Usuario(Integer.parseInt(mapaDatos.get("idUsuario")), mapaDatos.get("nombre"), mapaDatos.get("correo"), Boolean.parseBoolean(mapaDatos.get("verificado")), Integer.parseInt(mapaDatos.get("monedas")), Integer.parseInt(mapaDatos.get("reputacion")), Integer.parseInt(mapaDatos.get("rango")), Integer.parseInt(mapaDatos.get("puntosRango")), Integer.parseInt(mapaDatos.get("partidosJugados")), Integer.parseInt(mapaDatos.get("goles")), Integer.parseInt(mapaDatos.get("asistencias")), Integer.parseInt(mapaDatos.get("mvp")), mapaDatos.get("fotoperfil"), cosmeticoUsuario, cartaUsuario, mapaDatos.get("nombreRango"));
             Sesion.getSesion().setUsuario(usuario);
 
             if (mapaDatos.containsKey("selector") && mapaDatos.containsKey("token")) {

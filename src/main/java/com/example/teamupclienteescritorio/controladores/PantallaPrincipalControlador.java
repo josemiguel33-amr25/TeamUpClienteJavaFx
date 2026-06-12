@@ -96,12 +96,41 @@ public class PantallaPrincipalControlador implements Initializable {
 
     @FXML
     private void irMercado() {
-        SistemaDeJuego.cambiarPantalla("pantallaMercado.fxml");
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            Map<String, Object> mensaje = new HashMap<>();
+            Map<String, String> datos = new HashMap<>();
+
+            datos.put("tipoCosmeticos", "mercado");
+
+            mensaje.put("tipo", "cosmeticos");
+            mensaje.put("data", datos);
+
+            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
+        }
     }
 
     @FXML
     private void irRanking() {
-        // hacer ranking
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            Map<String, Object> mensaje = new HashMap<>();
+            Map<String, String> datos = new HashMap<>();
+
+            datos.put("rango", "1"); // valores por defecto 1 = bronce, 2 = plata, 3 = oro = 4 elite (guiño fifa 17, cuando los rangos eran rangos)
+            datos.put("mayorMenor", "mayor");
+
+            mensaje.put("tipo", "ranking");
+            mensaje.put("data", datos);
+
+            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
+        }
     }
 
     @FXML
@@ -111,7 +140,7 @@ public class PantallaPrincipalControlador implements Initializable {
 
     @FXML
     private void irMiPerfil() {
-        // hacer mi perfil
+        SistemaDeJuego.cambiarPantalla("pantallaPerfil.fxml");
     }
 
     @FXML

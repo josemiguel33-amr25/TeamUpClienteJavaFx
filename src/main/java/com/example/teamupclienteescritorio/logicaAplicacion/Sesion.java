@@ -1,21 +1,37 @@
 package com.example.teamupclienteescritorio.logicaAplicacion;
 
-import com.example.teamupclienteescritorio.clasesMensajes.CosmeticoSimplificado;
-import com.example.teamupclienteescritorio.clasesMensajes.PartidoSimplificado;
-import com.example.teamupclienteescritorio.clasesMensajes.SobreSimplificado;
+import com.example.teamupclienteescritorio.clasesMensajes.*;
 import com.example.teamupclienteescritorio.clasesSesion.DatosPartido;
 import com.example.teamupclienteescritorio.clasesSesion.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sesion {
+public class Sesion { // clase que me recuerda bastante al view model en android la verdad
     private static Sesion sesion;
     private Usuario usuario;
+
+    // Partidos disponibles, filtros se hacen llamando al servidor
     private List<PartidoSimplificado> partidos = new ArrayList<>();
+
+    // sobres disponibles en la tienda
     private List<SobreSimplificado> sobresTienda = new ArrayList<>();
+
+    // sobres que el usuario tiene
     private List<SobreSimplificado> sobresUsuario = new ArrayList<>();
+
+    // inventario del jugador
     private List<CosmeticoSimplificado> inventarioJugador = new ArrayList<>();
+
+    // objetos disponibles para comprar en el mercado
+    private List<MercadoSimplificado> objetosMercadosGlobal = new ArrayList<>();
+
+    //objetos en venta del usuario
+    private List<MercadoSimplificado> objetosMercadoUsuario = new ArrayList<>();
+
+    // jugadores del ranking
+    private List<UsuarioSimplificado> usuariosRanking = new ArrayList<>();
+
     private DatosPartido partidoActual;
 
 
@@ -39,6 +55,30 @@ public class Sesion {
 
     public List<CosmeticoSimplificado> getInventarioJugador() {
         return inventarioJugador;
+    }
+
+    public List<UsuarioSimplificado> getUsuariosRanking() {
+        return usuariosRanking;
+    }
+
+    public void setUsuariosRanking(List<UsuarioSimplificado> usuariosRanking) {
+        this.usuariosRanking = usuariosRanking;
+    }
+
+    public List<MercadoSimplificado> getObjetosMercadosUsuario() {
+        return objetosMercadoUsuario;
+    }
+
+    public void setObjetosMercadosUsuario(List<MercadoSimplificado> objetosMercadoUsuario) {
+        this.objetosMercadoUsuario = objetosMercadoUsuario;
+    }
+
+    public List<MercadoSimplificado> getObjetosMercadosGlobal() {
+        return objetosMercadosGlobal;
+    }
+
+    public void setObjetosMercadosGlobal(List<MercadoSimplificado> objetosMercadosGlobal) {
+        this.objetosMercadosGlobal = objetosMercadosGlobal;
     }
 
     public List<SobreSimplificado> getSobresUsuario() {

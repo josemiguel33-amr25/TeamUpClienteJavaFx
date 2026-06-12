@@ -1,6 +1,7 @@
 package com.example.teamupclienteescritorio.controladores;
 
 import com.example.teamupclienteescritorio.utilidades.SistemaDeJuego;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -49,9 +50,11 @@ public class PantallaLogControlador implements Initializable {
     @FXML
     private Label mensajePosicion111;
 
+    @FXML
+    private CheckBox recordarme;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         imagenFondo.fitWidthProperty().bind(root.widthProperty());
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
     }
@@ -78,8 +81,8 @@ public class PantallaLogControlador implements Initializable {
         }
 
         try {
-
             ObjectMapper mapper = new ObjectMapper();
+            boolean recordar = recordarme.isSelected();
 
             Map<String, Object> mensaje = new HashMap<>();
             mensaje.put("tipo", "iniciarSesion");
@@ -88,25 +91,20 @@ public class PantallaLogControlador implements Initializable {
             datos.put("correo", correo);
             datos.put("contrasenia", password);
             datos.put("remember", "no");
+            datos.put("generarToken", recordar ? "si" : "no");
 
             mensaje.put("data", datos);
 
             String json = mapper.writeValueAsString(mensaje);
 
-            System.out.println(json);
-
             SistemaDeJuego.cliente.enviarMensaje(json);
-
-        } catch (Exception em) {
-
-            System.out.println("TeamUp|Error|EMIS1");
-            em.printStackTrace();
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
         }
     }
 
     @FXML
     private void volverAtras() {
-
         SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
     }
 }

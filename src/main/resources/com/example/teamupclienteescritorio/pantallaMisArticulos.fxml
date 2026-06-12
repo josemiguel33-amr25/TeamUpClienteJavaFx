@@ -7,13 +7,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.Region?>
-<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaMercadoControlador">
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaMisArticulosControlador">
    <children>
       <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
@@ -49,24 +50,19 @@
             </HBox>
          </children>
       </StackPane>
-      <Button fx:id="botonIrMercado" layoutX="114.0" layoutY="182.0" mnemonicParsing="false" onAction="#verMercado" prefHeight="54.0" prefWidth="274.0" text="Mercado">
+      <Button fx:id="botonIrMercado" layoutX="114.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMercado" prefHeight="54.0" prefWidth="274.0" text="Mercado">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="botonVenderArticulo" layoutX="387.0" layoutY="182.0" mnemonicParsing="false" onAction="#abrirVentaArticulo" prefHeight="54.0" prefWidth="274.0" text="Vender Articulo">
+      <Button fx:id="menuPrincipal" layoutX="387.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMenuPrincipal" prefHeight="54.0" prefWidth="274.0" text="Menu Principal">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="menuPrincipal" layoutX="661.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMenuPrincipal" prefHeight="54.0" prefWidth="274.0" text="Menu Principal">
-         <font>
-            <Font name="Arial Black" size="24.0" />
-         </font>
-      </Button>
-      <ScrollPane fx:id="tarjetas" layoutX="112.0" layoutY="323.0" prefHeight="528.0" prefWidth="814.0">
+      <ScrollPane fx:id="tarjetas" fitToWidth="true" layoutX="249.0" layoutY="295.0" prefHeight="588.0" prefWidth="1167.0">
          <content>
-            <VBox fx:id="contenedorCosmeticos" prefHeight="200.0" prefWidth="100.0" spacing="20.0" />
+            <FlowPane fx:id="contenedorCosmeticos" prefHeight="571.0" prefWidth="1171.0" />
          </content>
       </ScrollPane>
       <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">

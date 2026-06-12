@@ -25,13 +25,16 @@ public class InicioTeamUp extends Application {
 
         scene.setOnKeyPressed(event -> {
 
-            if (event.getCode() == KeyCode.SPACE) {
+            if (event.getCode() == KeyCode.SPACE) { // eventos para pasar de la pantalla de carga adelante dandole al espacio + comprobacion cliente
 
                 System.out.println("TeamUp|MensajeInterno|Tecla detectada");
 
                 SistemaDeJuego.crearCliente();
 
-                SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
+                if (SistemaDeJuego.cliente.isConectado())
+                    SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
+                else
+                    SistemaDeJuego.abrirMensaje("No te has podido conectar al servidor porque no se encuentra disponible, ajusta la direccion en ajustes");
             }
         });
 
@@ -42,7 +45,6 @@ public class InicioTeamUp extends Application {
             } else {
                 Platform.exit();
             }
-
         });
 
         stage.setMaximized(true);

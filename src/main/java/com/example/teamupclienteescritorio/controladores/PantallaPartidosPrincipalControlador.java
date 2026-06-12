@@ -103,7 +103,7 @@ public class PantallaPartidosPrincipalControlador implements Initializable {
             String ciudad = ciudades.getValue();
             boolean verificados = soloVerificados.isSelected();
 
-            if (ciudad == null || ciudad.isBlank()) {
+            if (ciudad == null) {
                 ciudad = "todas";
             }
 
@@ -162,7 +162,6 @@ public class PantallaPartidosPrincipalControlador implements Initializable {
         for (PartidoSimplificado p : Sesion.getSesion().getPartidosSimplificados()) {
 
             HBox tarjeta = new HBox(20);
-            tarjeta.setStyle("-fx-border-color: black; -fx-padding: 15;");
             tarjeta.setMaxWidth(Double.MAX_VALUE);
             tarjeta.prefWidthProperty().bind(contenedorPartidos.widthProperty().subtract(25));
 

@@ -63,6 +63,13 @@ public class SistemaDeJuego { // Clase que emula el sistema de juego del server(
         }
     }
 
+    public static void cerrarPopup() { // funcion nueva para cerrar el pop up, por ejemplo abrimos venta articulo >> ponemos en venta un articulo >> la respuesta es perfecto >> pues cerramos el pop up
+        if (popupActual != null) {
+            popupActual.close();
+            popupActual = null;
+        }
+    }
+
     public static void abrirCosmeticoSobre(String nombre, String rareza, String rutaImagen) { // lo mismo que abrir mensaje pero para los sobres concretamente
         try {
             FXMLLoader loader = new FXMLLoader(SistemaDeJuego.class.getResource("/com/example/teamupclienteescritorio/pantallaObjetoSobre.fxml"));

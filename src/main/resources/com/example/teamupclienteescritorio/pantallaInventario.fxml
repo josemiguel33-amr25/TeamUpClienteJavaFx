@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaMercadoControlador">
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaInventarioControlador">
    <children>
       <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
@@ -50,12 +50,17 @@
             </HBox>
          </children>
       </StackPane>
-      <Button fx:id="misArticulos" layoutX="114.0" layoutY="182.0" mnemonicParsing="false" onAction="#verMisArticulos" prefHeight="54.0" prefWidth="274.0" text="Mis Articulos">
+      <Button fx:id="miPerfil" layoutX="114.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMiPerfil" prefHeight="54.0" prefWidth="274.0" text="Mi perfil">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="menuPrincipal" layoutX="386.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMenuPrincipal" prefHeight="54.0" prefWidth="274.0" text="Menu Principal">
+      <Button fx:id="botonVenderArticulo" layoutX="387.0" layoutY="182.0" mnemonicParsing="false" onAction="#abrirVentaArticulo" prefHeight="54.0" prefWidth="274.0" text="Vender Articulo">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="menuPrincipal" layoutX="661.0" layoutY="182.0" mnemonicParsing="false" onAction="#irMenuPrincipal" prefHeight="54.0" prefWidth="274.0" text="Menu Principal">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>

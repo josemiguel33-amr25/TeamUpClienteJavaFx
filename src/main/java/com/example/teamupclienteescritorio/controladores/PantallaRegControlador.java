@@ -62,7 +62,6 @@ public class PantallaRegControlador implements Initializable {
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
 
         posicion1.getItems().addAll("por", "dfc", "mc", "ld", "mco", "mcd","dc","ei","ed", "li");
-
         posicion2.getItems().addAll("por", "dfc", "mc", "ld", "mco", "mcd","dc","ei","ed", "li");
     }
 

@@ -1,6 +1,6 @@
 package com.example.teamupclienteescritorio.controladores;
 
-import com.example.teamupclienteescritorio.clasesMensajes.MercadoSimplificado;
+import com.example.teamupclienteescritorio.clasesMensajes.CosmeticoSimplificado;
 import com.example.teamupclienteescritorio.logicaAplicacion.Sesion;
 import com.example.teamupclienteescritorio.utilidades.SistemaDeJuego;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class PantallaMercadoControlador implements Initializable {
+public class PantallaInventarioControlador implements Initializable {
 
     @FXML
     private AnchorPane root;
@@ -51,7 +51,7 @@ public class PantallaMercadoControlador implements Initializable {
     private Label reputacion;
 
     @FXML
-    private Button misArticulos;
+    private Button miPerfil;
 
     @FXML
     private Button botonVenderArticulo;
@@ -69,99 +69,84 @@ public class PantallaMercadoControlador implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SistemaDeJuego.cargarDatosUsuario(imagenPerfil, imagenRango, tarjetavisita, monedas, reputacion);
 
+        imagenFondo.fitWidthProperty().bind(root.widthProperty());
+        imagenFondo.fitHeightProperty().bind(root.heightProperty());
+
         contenedorCosmeticos.setHgap(30);
         contenedorCosmeticos.setVgap(40);
         contenedorCosmeticos.setAlignment(Pos.TOP_CENTER);
-        contenedorCosmeticos.setPadding(new Insets(40, 40, 40, 40));
 
-        cargarMercado();
-        imagenFondo.fitWidthProperty().bind(root.widthProperty());
-        imagenFondo.fitHeightProperty().bind(root.heightProperty());
+        cargarInventario();
     }
 
-
-    private void cargarMercado() {
+    private void cargarInventario() {
         contenedorCosmeticos.getChildren().clear();
 
-        for (MercadoSimplificado articulo : Sesion.getSesion().getObjetosMercadosGlobal()) {
-            crearTarjetaArticulo(articulo);
+        for (CosmeticoSimplificado cosmetico : Sesion.getSesion().getInventarioJugador()) {
+            System.out.println("TeamUp|MensajeInterno| Cosmetico actual: " + cosmetico.getTituloCosmetico());
+            crearTarjetaCosmetico(cosmetico);
         }
     }
 
-    private void crearTarjetaArticulo(MercadoSimplificado articulo) {
+    private void crearTarjetaCosmetico(CosmeticoSimplificado cosmetico) {
         VBox tarjeta = new VBox();
 
         FlowPane.setMargin(tarjeta, new Insets(20, 20, 30, 20));
 
         tarjeta.setSpacing(10);
         tarjeta.setAlignment(Pos.CENTER);
+
         tarjeta.setPrefWidth(250);
-        tarjeta.setPrefHeight(400);
+        tarjeta.setPrefHeight(450);
 
         ImageView imagenArticulo = new ImageView();
         imagenArticulo.setFitWidth(180);
         imagenArticulo.setFitHeight(220);
-
-        // placeholder por ahoara
         imagenArticulo.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
 
-        Label vendedor = new Label("Vendedor: " + articulo.getNombreVendedor());
-        Label nombreArticulo = new Label(articulo.getNombreArticulo());
-        Label precio = new Label("💰 " + articulo.getPrecio() + " monedas");
+        Label nombreArticulo = new Label(cosmetico.getTituloCosmetico());
+        Label rareza = new Label("Rareza: " + cosmetico.getRareza());
+        Label tipo = new Label("Tipo: " + cosmetico.getTipo());
+        Label cantidad = new Label("Cantidad: " + cosmetico.getCantidad());
 
-        Button comprar = new Button("Comprar");
-        comprar.setUserData(articulo.getIdArticulo()); // id para poder usarlo cuando le demos al boton y mandar comprar al servidor
-        comprar.setOnAction(this::comprarArticulo);
+        Button equipar = new Button("Equipar");
+        equipar.setUserData(cosmetico.getIdCosmetico() + "");
+        equipar.setOnAction(this::equipar);
 
-        tarjeta.getChildren().addAll(imagenArticulo, vendedor, nombreArticulo, precio, comprar);
-
+        tarjeta.getChildren().addAll(imagenArticulo, nombreArticulo, rareza, tipo, cantidad, equipar);
         contenedorCosmeticos.getChildren().add(tarjeta);
     }
 
-    private void comprarArticulo(ActionEvent event) {
+    private void equipar(ActionEvent event) {
         try {
             Button boton = (Button) event.getSource();
-            int idArticulo = (int) boton.getUserData();
+            String idCosmetico = (String) boton.getUserData();
 
             Map<String, Object> mensaje = new HashMap<>();
             Map<String, String> data = new HashMap<>();
 
-            data.put("tipoCosmeticos", "comprarArticulo");
-            data.put("idArticuloMercado", String.valueOf(idArticulo));
+            data.put("tipoCosmeticos", "cambiarCosmetico");
+            data.put("idCosmetico", idCosmetico);
 
             mensaje.put("tipo", "cosmeticos");
             mensaje.put("data", data);
 
             ObjectMapper mapper = new ObjectMapper();
-
             SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
         } catch (JsonProcessingException em) {
             System.out.println("TeamUp|Error|EM9");
         }
     }
-
-
 
     @FXML
-    private void verMisArticulos() {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-
-            Map<String, Object> mensaje = new HashMap<>();
-            Map<String, String> datos = new HashMap<>();
-
-            datos.put("tipoCosmeticos", "verMisArticulosMercado");
-
-            mensaje.put("tipo", "cosmeticos");
-            mensaje.put("data", datos);
-
-            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
-        } catch (JsonProcessingException em) {
-            System.out.println("TeamUp|Error|EM9");
-        }
+    private void irMiPerfil() {
+        SistemaDeJuego.cambiarPantalla("pantallaPerfil.fxml");
     }
 
-
+    @FXML
+    private void abrirVentaArticulo() {
+        SistemaDeJuego.abrirPopup("pantallaVenderArticulo.fxml", "Vender Articulo");
+    }
 
     @FXML
     private void irMenuPrincipal() {

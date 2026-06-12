@@ -58,12 +58,7 @@
             <Font name="Arial" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="ranking" alignment="TOP_LEFT" layoutX="247.0" layoutY="444.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Ranking" textAlignment="JUSTIFY">
-         <font>
-            <Font name="Arial" size="28.0" />
-         </font>
-      </Button>
-      <Button fx:id="rangos" alignment="TOP_LEFT" layoutX="509.0" layoutY="444.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="262.0" text="Rangos" textAlignment="JUSTIFY">
+      <Button fx:id="ranking" alignment="TOP_LEFT" layoutX="247.0" layoutY="444.0" mnemonicParsing="false" onAction="#irRanking" prefHeight="190.0" prefWidth="530.0" text="Ranking" textAlignment="JUSTIFY">
          <font>
             <Font name="Arial" size="28.0" />
          </font>
