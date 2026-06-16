@@ -9,8 +9,10 @@ module com.example.teamupclienteescritorio {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.teamupclienteescritorio to javafx.fxml;
-    opens com.example.teamupclienteescritorio.Controladores to javafx.fxml;
+    opens com.example.teamupclienteescritorio.controladores to javafx.fxml;
+    opens com.example.teamupclienteescritorio.clasesMensajes to com.fasterxml.jackson.databind;
     exports com.example.teamupclienteescritorio;
 }

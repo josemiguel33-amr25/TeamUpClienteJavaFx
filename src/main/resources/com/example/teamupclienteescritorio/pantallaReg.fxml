@@ -6,28 +6,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.Controladores.PantallaRegControlador">
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaRegControlador">
    <children>
       <ImageView fx:id="imagenFondo" pickOnBounds="true">
          <image>
             <Image url="@imagenes/campoFondo.png" />
          </image>
       </ImageView>
-      <Text fx:id="textoTeamUp" fill="WHITE" layoutX="677.0" layoutY="146.0" stroke="#302323" strokeDashOffset="5.0" strokeLineCap="BUTT" strokeMiterLimit="30.0" strokeType="OUTSIDE" strokeWidth="10.0" text="LOGO">
-         <font>
-            <Font name="Audiowide Regular" size="120.0" />
-         </font>
-         <effect>
-            <ColorAdjust brightness="0.37" contrast="-0.54" hue="0.47" saturation="-0.23" />
-         </effect>
-      </Text>
       <Label layoutX="151.0" layoutY="187.0" text="Registrarse" textFill="#2b0000" wrapText="true">
          <font>
             <Font name="Alpenkreuzer" size="44.0" />
@@ -90,5 +80,15 @@
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
+      <ImageView fx:id="flechaAtras" fitHeight="91.0" fitWidth="94.0" layoutX="85.0" layoutY="52.0" onMouseClicked="#volverAtras" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/volverAtras.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="735.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/logo.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

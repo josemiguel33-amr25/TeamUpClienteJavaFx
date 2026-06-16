@@ -1,0 +1,426 @@
+.button {
+    -fx-background-color:
+            linear-gradient(#1e88e5, #1565c0);
+
+    -fx-text-fill: #f5f5f5;
+
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 15;
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+
+    -fx-cursor: hand;
+}
+
+.titulo {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+}
+
+.subtitulo {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #4fc3f7;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.tarjeta-cosmetico .label {
+
+    -fx-text-fill: #ffffff;
+
+    -fx-font-weight: bold;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.9),
+            8,
+            0,
+            1,
+            1
+    );
+
+    -fx-background-color: rgba(20,35,60,0.60);
+}
+
+.nombre-articulo {
+
+    -fx-font-size: 22px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            black,
+            10,
+            0,
+            2,
+            2
+    );
+}
+
+.nombre-ranking {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+}
+
+.rango-ranking {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #4fc3f7;
+}
+
+.estadisticas-ranking {
+    -fx-font-size: 16px;
+
+    -fx-text-fill: white;
+
+    -fx-background-color: rgba(0,0,0,0.35);
+
+    -fx-background-radius: 10;
+
+    -fx-padding: 10;
+}
+
+.tarjeta-ranking {
+    -fx-background-color: rgba(20, 30, 50, 0.85);
+
+    -fx-background-radius: 15;
+
+    -fx-border-color: #4fc3f7;
+    -fx-border-width: 2;
+
+    -fx-border-radius: 15;
+}
+
+.root {
+    -fx-background-color:
+            linear-gradient(
+                    from 0% 0% to 100% 100%,
+                    #10203b,
+                    #1e3c72,
+                    #2a5298
+            );
+}
+
+.button:hover {
+    -fx-background-color:
+            linear-gradient(#42a5f5, #1e88e5);
+
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/*
+
+Pestaña partidos
+ */
+
+.tarjeta-partido {
+    -fx-background-color: rgba(15,25,45,0.85);
+
+    -fx-background-radius: 15;
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 2;
+
+    -fx-border-radius: 15;
+
+    -fx-padding: 15;
+}
+
+.partido-titulo {
+    -fx-font-size: 22px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+}
+
+.partido-info {
+    -fx-font-size: 15px;
+
+    -fx-text-fill: white;
+}
+
+.tarjeta-partido:hover {
+    -fx-background-color: rgba(25,45,75,0.95);
+
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+}
+
+/*
+Esto es para la pestaña perfil
+*/
+.titulo-perfil {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f5f5;
+}
+
+.dato-usuario {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+
+    -fx-background-color: rgba(0,0,0,0.45);
+    -fx-background-radius: 10;
+
+    -fx-padding: 8 12 8 12;
+}
+
+.estadistica {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd54f;
+
+    -fx-background-color: rgba(15,23,42,0.75);
+    -fx-background-radius: 10;
+
+    -fx-padding: 8 12 8 12;
+
+    -fx-border-color: #d4af37;
+    -fx-border-radius: 10;
+}
+
+.titulo-seccion {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.7),
+            10,
+            0,
+            2,
+            2
+    );
+}
+
+.titulo-seccion-rojo {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ff4d4d;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.7),
+            10,
+            0,
+            2,
+            2
+    );
+}
+
+.carta-texto {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1a1a1a;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(255,255,255,0.4),
+            2,
+            0,
+            0,
+            0
+    );
+}
+
+/*
+Esto es para la cabecera
+ */
+
+.dato-cabecera {
+    -fx-font-size: 22px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+
+    -fx-background-color: rgba(0,0,0,0.55);
+
+    -fx-background-radius: 8;
+
+    -fx-padding: 5 10 5 10;
+}
+
+.cabecera-usuario {
+    -fx-background-color: rgba(0,0,0,0.25);
+
+    -fx-background-radius: 15;
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+}
+
+.panel-cabecera {
+    -fx-background-color: rgba(10,15,30,0.65);
+
+    -fx-background-radius: 20;
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+
+.dato-superior {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #ffd700;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.8),
+            5,
+            0,
+            1,
+            1
+    );
+}
+
+.tarjeta-visita {
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.7),
+            15,
+            0,
+            3,
+            3
+    );
+}
+
+.foto-perfil {
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.7),
+            10,
+            0,
+            2,
+            2
+    );
+}
+
+.rango-perfil {
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(255,215,0,0.8),
+            15,
+            0,
+            0,
+            0
+    );
+}
+
+/*
+Ver mass detalles pestaña
+ */
+
+.titulo-partido {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffd700;
+}
+
+.estado-partido {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4caf50;
+}
+
+.titulo-equipo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #4fc3f7;
+
+    -fx-background-color: rgba(10,20,40,0.8);
+
+    -fx-background-radius: 10;
+
+    -fx-padding: 8 20 8 20;
+}
+
+.jugador-partido {
+
+    -fx-font-size: 16px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+
+    -fx-background-color: rgba(15,25,45,0.85);
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 1;
+
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+
+    -fx-padding: 8;
+}
+
+.foto-jugador-partido {
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.8),
+            10,
+            0,
+            2,
+            2
+    );
+}
+
+.boton-principal-partido {
+
+    -fx-background-color:
+            linear-gradient(#1e88e5, #1565c0);
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 20px;
+
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 15;
+
+    -fx-border-color: #ffd700;
+
+    -fx-border-width: 2;
+
+    -fx-border-radius: 15;
+}
+
+
+
+
+
+
+
