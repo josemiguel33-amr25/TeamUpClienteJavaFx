@@ -12,6 +12,14 @@ public class VotacionJugador { // clase que estara en cliente y server para la c
 
     }
 
+    public VotacionJugador(int idUsuario, int puntuacion, int goles, int asistencias, boolean mvp) {
+        this.idUsuario = idUsuario;
+        this.puntuacion = puntuacion;
+        this.goles = goles;
+        this.asistencias = asistencias;
+        this.mvp = mvp;
+    }
+
     public int getIdUsuario() {
         return idUsuario;
     }

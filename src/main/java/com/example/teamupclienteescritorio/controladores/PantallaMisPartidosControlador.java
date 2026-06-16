@@ -76,7 +76,7 @@ public class PantallaMisPartidosControlador implements Initializable {
         SistemaDeJuego.cargarDatosUsuario(imagenPerfil, imagenRango, tarjetavisita, monedas, reputacion);
         imagenFondo.fitWidthProperty().bind(root.widthProperty());
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
-        estadoPartidosFiltro.getItems().addAll("abierto", "terminado", "lleno");
+        estadoPartidosFiltro.getItems().addAll("abierto", "terminado", "lleno", "completado");
         cargarPartidos();
     }
 
@@ -111,19 +111,20 @@ public class PantallaMisPartidosControlador implements Initializable {
         contenedorPartidos.getChildren().clear();
 
         for (PartidoSimplificado p : Sesion.getSesion().getPartidosSimplificados()) {
-
             HBox tarjeta = new HBox(20);
             tarjeta.setMaxWidth(Double.MAX_VALUE);
             tarjeta.prefWidthProperty().bind(contenedorPartidos.widthProperty().subtract(25));
+            tarjeta.getStyleClass().add("tarjeta-partido");
 
             // Usuario
             VBox usuario = new VBox(5);
 
             // por ahora placeholder imagen mas addelante usare servidor httpp, esto es para identificar el jugador que crea el partido y que el usuario pueda pinchar en el perfil para ver mas info del usuario
-            ImageView foto = new ImageView(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
+            ImageView foto = new ImageView(SistemaDeJuego.cargarImagen("fotosPerfil", SistemaDeJuego.nombreArchivo(p.getFotoUsuario()) + ".png"));
             foto.setFitWidth(60);
             foto.setFitHeight(60);
             Label nombreUsuario = new Label(p.getNombreUsuario());
+            nombreUsuario.getStyleClass().add("partido-info");
             usuario.getChildren().addAll(foto, nombreUsuario);
 
             // Esto es todo lo relacionado con la informacion de los partidos
@@ -131,14 +132,27 @@ public class PantallaMisPartidosControlador implements Initializable {
             HBox.setHgrow(informacion, Priority.ALWAYS);
 
             Label titulo = new Label(p.getTituloPartido());
-            titulo.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
+            titulo.getStyleClass().add("partido-titulo");
+
+
 
             Label ubicacion = new Label("📍 " + p.getUbicacion());
+            ubicacion.getStyleClass().add("partido-info");
+
             Label ciudad = new Label("🌍 " + p.getCiudad());
+            ciudad.getStyleClass().add("partido-info");
+
             Label fecha = new Label("📅 " + p.getDia() + "/" + p.getMes() + "/" + p.getAnio() + " " + p.getHora() + ":" + String.format("%02d", p.getMinutos()));
+            fecha.getStyleClass().add("partido-info");
+
             Label precio = new Label("💰 " + p.getPrecio() + "€");
+            precio.getStyleClass().add("partido-info");
+
             Label estado = new Label("🔓 " + p.getEstado());
+            estado.getStyleClass().add("partido-info");
+
             Label verificados = new Label(p.isSoloVerificados() ? "✔ Solo verificados" : "✖ Todos los usuarios");
+            verificados.getStyleClass().add("partido-info");
 
             informacion.getChildren().addAll(titulo, ubicacion, ciudad, fecha, precio, estado, verificados);
 
@@ -193,7 +207,7 @@ public class PantallaMisPartidosControlador implements Initializable {
 
     @FXML
     private void irCrearPartido() {
-        SistemaDeJuego.abrirPopup("pantallaCrearPartido.fmxl", "Crear Partido");
+        SistemaDeJuego.abrirPopup("pantallaCrearPartido.fxml", "Crear Partido");
     }
 
     @FXML

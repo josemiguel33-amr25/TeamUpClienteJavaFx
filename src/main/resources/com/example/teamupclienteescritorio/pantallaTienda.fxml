@@ -19,22 +19,22 @@
             <Image url="@imagenes/campoFondo.png" />
          </image>
       </ImageView>
-      <StackPane layoutX="824.0" layoutY="22.0" prefHeight="134.0" prefWidth="622.0">
+      <StackPane layoutX="824.0" styleClass="cabecera-usuario" layoutY="22.0" prefHeight="134.0" prefWidth="622.0">
          <children>
-            <ImageView fx:id="tarjetavisita" fitHeight="134.0" fitWidth="622.0" pickOnBounds="true" preserveRatio="false" />
+            <ImageView fx:id="tarjetavisita" styleClass="tarjeta-visita" fitHeight="134.0" fitWidth="622.0" pickOnBounds="true" preserveRatio="false" />
             <HBox alignment="CENTER_LEFT" prefHeight="134.0" prefWidth="622.0" spacing="15.0">
                <children>
-                  <ImageView fx:id="imagenPerfil" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="false" />
-                  <ImageView fx:id="imagenRango" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imagenPerfil" styleClass="foto-perfil" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="false" />
+                  <ImageView fx:id="imagenRango" styleClass="rango-perfil" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                   <Region HBox.hgrow="ALWAYS" />
                   <VBox alignment="CENTER_RIGHT" spacing="5.0">
                      <children>
-                        <Label fx:id="monedas" text="Monedas">
+                        <Label fx:id="monedas" styleClass="dato-cabecera" text="Monedas">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="reputacion" text="Reputacion">
+                        <Label fx:id="reputacion" styleClass="dato-cabecera" text="Reputacion">
                            <font>
                               <Font size="20.0" />
                            </font>

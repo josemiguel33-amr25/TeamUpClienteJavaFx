@@ -91,6 +91,7 @@ public class PantallaMisArticulosControlador implements Initializable {
 
     private void crearTarjetaArticulo(MercadoSimplificado articulo) {
         VBox tarjeta = new VBox();
+        tarjeta.getStyleClass().add("tarjeta-cosmetico");
 
         FlowPane.setMargin(tarjeta, new Insets(20, 20, 30, 20));
 
@@ -110,6 +111,7 @@ public class PantallaMisArticulosControlador implements Initializable {
 
         Label vendedor = new Label("Vendedor: " + articulo.getNombreVendedor());
         Label nombreArticulo = new Label(articulo.getNombreArticulo());
+        nombreArticulo.getStyleClass().add("nombre-articulo");
         Label precio = new Label("💰 " + articulo.getPrecio() + " monedas");
 
         Button quitar = new Button("Quitar del Mercado");

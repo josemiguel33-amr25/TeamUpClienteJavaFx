@@ -66,4 +66,8 @@ public class Cliente {
         }
         Platform.exit();
     }
+
+    public Properties getPropiedades() {
+        return propiedades;
+    }
 }

@@ -27,10 +27,5 @@
             <Font name="Arial Black" size="40.0" />
          </font>
       </Button>
-      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="58.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imagenes/logo.jpg" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

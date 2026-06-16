@@ -11,172 +11,172 @@
 
 <AnchorPane fx:id="root" prefHeight="602.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamupclienteescritorio.controladores.PantallaVerDetallesPartidoControlador">
    <children>
-      <Label layoutX="127.0" layoutY="95.0" text="Equipo 1">
+      <Label layoutX="127.0" layoutY="95.0" styleClass="titulo-equipo" text="Equipo 1">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="496.0" layoutY="95.0" text="Equipo 2">
+      <Label layoutX="496.0" layoutY="95.0" styleClass="titulo-equipo" text="Equipo 2">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
       <ImageView fx:id="logo" fitHeight="72.0" fitWidth="93.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@imagenes/logo.jpg" />
+            <Image url="@imagenes/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej1E1" layoutX="93.0" layoutY="128.0" prefHeight="46.0" prefWidth="157.0" text="Libre">
+      <Label fx:id="nombrej1E1" layoutX="93.0" layoutY="128.0" prefHeight="46.0" prefWidth="157.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj1E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj1E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej2E1" layoutX="92.0" layoutY="185.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej2E1" layoutX="92.0" layoutY="185.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj2E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj2E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej3E1" layoutX="92.0" layoutY="240.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej3E1" layoutX="92.0" layoutY="240.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj3E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj3E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej4E1" layoutX="92.0" layoutY="296.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej4E1" layoutX="92.0" layoutY="296.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj4E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj4E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej5E1" layoutX="92.0" layoutY="353.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej5E1" layoutX="92.0" layoutY="353.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj5E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj5E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej6E1" layoutX="92.0" layoutY="411.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej6E1" layoutX="92.0" layoutY="411.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj6E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj6E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej7E1" layoutX="92.0" layoutY="470.0" prefHeight="46.0" prefWidth="158.0" text="Libre">
+      <Label fx:id="nombrej7E1" layoutX="92.0" layoutY="470.0" prefHeight="46.0" prefWidth="158.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj7E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj7E1" fitHeight="72.0" fitWidth="93.0" layoutX="19.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej1E2" layoutX="461.0" layoutY="126.0" prefHeight="46.0" prefWidth="129.0" text="Libre">
+      <Label fx:id="nombrej1E2" layoutX="461.0" layoutY="126.0" prefHeight="46.0" prefWidth="129.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj1E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj1E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej2E2" layoutX="460.0" layoutY="183.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej2E2" layoutX="460.0" layoutY="183.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj2E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj2E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej3E2" layoutX="460.0" layoutY="238.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej3E2" layoutX="460.0" layoutY="238.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj3E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj3E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej4E2" layoutX="460.0" layoutY="294.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej4E2" layoutX="460.0" layoutY="294.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj4E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj4E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej5E2" layoutX="460.0" layoutY="351.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej5E2" layoutX="460.0" layoutY="351.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj5E2" fitHeight="72.0" fitWidth="93.0" layoutX="388.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj5E2" fitHeight="72.0" fitWidth="93.0" layoutX="388.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej6E2" layoutX="460.0" layoutY="409.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej6E2" layoutX="460.0" layoutY="409.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj6E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj6E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nombrej7E2" layoutX="460.0" layoutY="468.0" prefHeight="46.0" prefWidth="130.0" text="Libre">
+      <Label fx:id="nombrej7E2" layoutX="460.0" layoutY="468.0" prefHeight="46.0" prefWidth="130.0" styleClass="jugador-partido" text="Libre">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagenj7E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagenj7E2" fitHeight="72.0" fitWidth="93.0" layoutX="387.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" styleClass="foto-jugador-partido">
          <image>
             <Image url="@imagenes/logo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="botonAccion" layoutX="294.0" layoutY="555.0" mnemonicParsing="false" onAction="#accionPartido" prefHeight="34.0" prefWidth="214.0" text="Boton" visible="false">
+      <Button fx:id="botonAccion" layoutX="294.0" layoutY="555.0" mnemonicParsing="false" onAction="#accionPartido" prefHeight="34.0" prefWidth="287.0" styleClass="boton-principal-partido" text="Boton" visible="false">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="339.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" text="Estado:">
+      <Label layoutX="339.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" styleClass="titulo-partido" text="Estado:">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="equipoSeleccion" layoutX="179.0" layoutY="557.0" prefWidth="150.0" promptText=" Equipo Ganador" visible="false" />
+      <ComboBox fx:id="equipoSeleccion" layoutX="109.0" layoutY="557.0" prefWidth="150.0" promptText=" Equipo Ganador" visible="false" />
       <ComboBox fx:id="puntuacionJ1E1" layoutX="197.0" layoutY="139.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
       <ComboBox fx:id="puntuacionJ2E1" layoutX="197.0" layoutY="195.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
       <ComboBox fx:id="puntuacionJ3E1" layoutX="196.0" layoutY="250.0" prefHeight="26.0" prefWidth="107.0" promptText="Puntuacion" visible="false" />
@@ -205,25 +205,45 @@
       <Spinner fx:id="golesJ5E2" layoutX="713.0" layoutY="362.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="golesJ6E2" layoutX="714.0" layoutY="420.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="golesJ7E2" layoutX="714.0" layoutY="480.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <ComboBox fx:id="mvpJugadores" layoutX="521.0" layoutY="560.0" prefHeight="26.0" prefWidth="76.0" promptText="MVP" visible="false" />
-      <Label fx:id="estadoPartido" layoutX="414.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" text="Estado">
+      <ComboBox fx:id="mvpJugadores" layoutX="521.0" layoutY="560.0" prefHeight="26.0" prefWidth="122.0" promptText="MVP" visible="false" />
+      <Label fx:id="estadoPartido" layoutX="414.0" layoutY="39.0" prefHeight="22.0" prefWidth="150.0" styleClass="estado-partido" text="Estado">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
       <Spinner fx:id="asisJ1E1" layoutX="232.0" layoutY="140.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ2E1" layoutX="232.0" layoutY="192.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ3E1" layoutX="232.0" layoutY="248.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ4E1" layoutX="232.0" layoutY="306.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ2E1" layoutX="232.0" layoutY="195.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ3E1" layoutX="232.0" layoutY="250.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ4E1" layoutX="232.0" layoutY="307.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="asisJ5E1" layoutX="232.0" layoutY="363.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ6E1" layoutX="232.0" layoutY="425.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ6E1" layoutX="232.0" layoutY="421.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="asisJ7E1" layoutX="232.0" layoutY="480.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
       <Spinner fx:id="asisJ1E2" layoutX="629.0" layoutY="138.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ2E2" layoutX="629.0" layoutY="190.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ3E2" layoutX="630.0" layoutY="245.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ4E2" layoutX="631.0" layoutY="301.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ5E2" layoutX="630.0" layoutY="361.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ6E2" layoutX="630.0" layoutY="419.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
-      <Spinner fx:id="asisJ7E2" layoutX="629.0" layoutY="474.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ2E2" layoutX="629.0" layoutY="194.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ3E2" layoutX="630.0" layoutY="249.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ4E2" layoutX="631.0" layoutY="307.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ5E2" layoutX="630.0" layoutY="363.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ6E2" layoutX="630.0" layoutY="420.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Spinner fx:id="asisJ7E2" layoutX="629.0" layoutY="480.0" prefHeight="26.0" prefWidth="72.0" visible="false" />
+      <Label layoutX="240.0" layoutY="110.0" styleClass="titulo-equipo" text="Asis">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="110.0" styleClass="titulo-equipo" text="Goles">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="98.0" styleClass="titulo-equipo" text="Asis">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="708.0" layoutY="98.0" styleClass="titulo-equipo" text="Goles">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

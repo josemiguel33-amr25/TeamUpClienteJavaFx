@@ -72,6 +72,7 @@ public class PantallaRankingControlador implements Initializable {
         SistemaDeJuego.cargarDatosUsuario(imagenPerfil, imagenRango, tarjetavisita, monedas, reputacion);
 
         contenedorPartidos.setFillWidth(true);
+        contenedorPartidos.setPadding(new Insets(20, 20, 100, 20));          // arriba, derecha, abajo izquierda sin esto se corta la ultima tarjeta al final
         imagenFondo.fitWidthProperty().bind(root.widthProperty());
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
 
@@ -82,10 +83,11 @@ public class PantallaRankingControlador implements Initializable {
     }
 
     private void cargarRanking() { // pone contenedor partidos porque la interfaz es casi un copia y pega de partidos
-        contenedorPartidos.getChildren().clear();
+        contenedorPartidos.getChildren().clear(); // no hago comprobacion de si la lista de jugadores del rango esta vacia porque si estuviera vacia ni abre esta ventana
+        Image imagenRango = SistemaDeJuego.cargarImagen("rangos", SistemaDeJuego.nombreArchivo(obtenerRango(Sesion.getSesion().getUsuariosRanking().get(0).getRango())) + ".png");
 
         for (UsuarioSimplificado usuario : Sesion.getSesion().getUsuariosRanking()) {
-            crearTarjetaUsuario(usuario);
+            crearTarjetaUsuario(usuario, imagenRango);
         }
     }
 
@@ -104,11 +106,9 @@ public class PantallaRankingControlador implements Initializable {
         return  rangoConvertido;
     }
 
-    private void crearTarjetaUsuario(UsuarioSimplificado usuario) {
-        contenedorPartidos.setPadding(new Insets(20, 20,  100, 20)); // arriba, derecha, abajo izquierda sin esto se corta la ultima tarjeta al final
-
-
+    private void crearTarjetaUsuario(UsuarioSimplificado usuario, Image imagenRangoDescargada) { // paso la imagen porque para todos es el mismo rango asi que para ahorrarnos llamar al s ervidor http cada vez que se necesite la imagen del rango
         HBox tarjeta = new HBox(20);
+        tarjeta.getStyleClass().add("tarjeta-ranking");
 
         tarjeta.setMaxWidth(Double.MAX_VALUE);
         tarjeta.prefWidthProperty().bind(contenedorPartidos.widthProperty().subtract(25));
@@ -116,12 +116,13 @@ public class PantallaRankingControlador implements Initializable {
         VBox rangoBox = new VBox(5);
         rangoBox.setAlignment(Pos.CENTER);
 
-        ImageView imagenRango = new ImageView(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/placeholderrango.png")));
+        ImageView imagenRango = new ImageView(imagenRangoDescargada);
         imagenRango.setFitWidth(120);
         imagenRango.setFitHeight(120);
         imagenRango.setPreserveRatio(true);
 
         Label nombreRango = new Label(obtenerRango(usuario.getRango()));
+        nombreRango.getStyleClass().add("rango-ranking");
 
         rangoBox.getChildren().addAll(imagenRango, nombreRango);
 
@@ -129,9 +130,10 @@ public class PantallaRankingControlador implements Initializable {
         HBox.setHgrow(informacion, Priority.ALWAYS);
 
         Label nombreUsuario = new Label(usuario.getNombre());
-
+        nombreUsuario.getStyleClass().add("nombre-ranking");nombreUsuario.getStyleClass().add("nombre-ranking");
 
         Label estadisticas = new Label("Estadísticas\n" + "Puntos: " + usuario.getPuntos() + "\n" + "Reputación: " + usuario.getReputacion() + "\n" + "Goles: " + usuario.getGoles() + "\n" + "Asistencias: " + usuario.getAsistencias() + "\n" + "MVPs: " + usuario.getMvps());
+        estadisticas.getStyleClass().add("estadisticas-ranking");
 
         informacion.getChildren().addAll(nombreUsuario, estadisticas);
         Region espacio = new Region();

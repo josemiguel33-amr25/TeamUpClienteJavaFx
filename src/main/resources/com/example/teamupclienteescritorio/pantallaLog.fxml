@@ -17,9 +17,9 @@
             <Image url="@imagenes/campoFondo.png" />
          </image>
       </ImageView>
-      <Label layoutX="591.0" layoutY="201.0" text="Iniciar Sesion" textFill="#2b0000" wrapText="true">
+      <Label layoutX="677.0" layoutY="201.0" text="Iniciar Sesion" textFill="#2b0000" wrapText="true">
          <font>
-            <Font name="Alpenkreuzer" size="44.0" />
+            <Font name="Arial Bold" size="44.0" />
          </font>
       </Label>
       <Label layoutX="699.0" layoutY="301.0" text="Correo Electronico" textAlignment="CENTER" wrapText="true">

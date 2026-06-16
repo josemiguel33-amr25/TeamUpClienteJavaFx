@@ -14,8 +14,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -27,6 +31,9 @@ public class PantallaPerfilControlador implements Initializable {
 
     @FXML
     private ImageView imagenFondo;
+
+    @FXML
+    private ImageView imagenRango;
 
     @FXML
     private Button botonInventario;
@@ -123,6 +130,7 @@ public class PantallaPerfilControlador implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         imagenFondo.fitWidthProperty().bind(root.widthProperty());
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
+
         cargarPosiciones();
         cargarDatosUsuario();
         cargarCarta();
@@ -130,6 +138,7 @@ public class PantallaPerfilControlador implements Initializable {
 
     private void cargarDatosUsuario() {
         Usuario usuario = Sesion.getSesion().getUsuario();
+        imagenRango.setImage(SistemaDeJuego.cargarImagen("rangos", SistemaDeJuego.nombreArchivo(usuario.getNombreRango()) + ".png"));
 
         nombreUsuario.setText(usuario.getNombre());
         correoUsuario.setText(usuario.getCorreo());
@@ -142,6 +151,54 @@ public class PantallaPerfilControlador implements Initializable {
         partidosJugados.setText("Partidos Jugados: " + usuario.getPartidosJugados());
 
         rangoLabel.setText(usuario.getNombreRango());
+    }
+
+    @FXML
+    private void cambiarFotoPerfil() {
+        FileChooser selector = new FileChooser();
+        selector.setTitle("Selecciona una foto, porfavor elige una sin fondo para que se vea bien en la carta");
+
+        selector.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("imagenes", "*.png", "*.jpg", "*.jpeg"));
+
+        File archivo = selector.showOpenDialog(SistemaDeJuego.stagePrincipal);
+
+        if (archivo == null)
+            return;
+
+        subirFotoPerfil(archivo);
+    }
+
+    private void subirFotoPerfil(File archivo) {
+        try {
+            URL url = new URL(SistemaDeJuego.obtenerUrlServidorHttp() + "/subirFotoPerfil");
+
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+
+            conexion.setRequestMethod("POST");
+            conexion.setDoOutput(true);
+
+            conexion.setRequestProperty("usuario", String.valueOf(Sesion.getSesion().getUsuario().getIdUsuario()));
+            Files.copy(archivo.toPath(), conexion.getOutputStream());
+
+            if (conexion.getResponseCode() == 200)
+                actualizarFotoServidor();
+
+        } catch (Exception em) {
+            System.out.println("TeamUp|Error|EM10");
+        }
+    }
+
+    private void actualizarFotoServidor() {
+        try {
+            Map<String, Object> mensaje = new HashMap<>();
+            mensaje.put("tipo", "actualizarFotoPerfil");
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            SistemaDeJuego.cliente.enviarMensaje(mapper.writeValueAsString(mensaje));
+        } catch (JsonProcessingException em) {
+            System.out.println("TeamUp|Error|EM9");
+        }
     }
 
     private void cargarPosiciones() {
@@ -198,7 +255,7 @@ public class PantallaPerfilControlador implements Initializable {
         Usuario usuario = Sesion.getSesion().getUsuario();
 
         nombreUsuarioCarta.setText(usuario.getNombre());
-
+        carta.setImage(SistemaDeJuego.cargarImagen("cartas", SistemaDeJuego.nombreArchivo(usuario.getCosmeticoUsuario().getCartaCosmetico()) + ".png"));
         mediaJugador.setText(String.valueOf(usuario.getCartaUsuario().getMediaJugador()));
         estadisticaRitmo.setText(String.valueOf(usuario.getCartaUsuario().getRitmo()));
         estadisticaTiro.setText(String.valueOf(usuario.getCartaUsuario().getTiro()));
@@ -207,9 +264,8 @@ public class PantallaPerfilControlador implements Initializable {
         estadisticaDefensa.setText(String.valueOf(usuario.getCartaUsuario().getDefensa()));
         estadisticaFisico.setText(String.valueOf(usuario.getCartaUsuario().getFisico()));
 
-        caraJugador.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/placeholdercara.png")));
+        caraJugador.setImage(SistemaDeJuego.cargarImagen("fotosPerfil", SistemaDeJuego.nombreArchivo(usuario.getFotoPerfil()) + ".png"));; // esto es la foto de perfil
     }
-
 
     @FXML
     private void irInventario() {

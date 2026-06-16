@@ -90,6 +90,8 @@ public class PantallaMercadoControlador implements Initializable {
 
     private void crearTarjetaArticulo(MercadoSimplificado articulo) {
         VBox tarjeta = new VBox();
+        tarjeta.getStyleClass().add("tarjeta-cosmetico");
+
 
         FlowPane.setMargin(tarjeta, new Insets(20, 20, 30, 20));
 
@@ -102,11 +104,11 @@ public class PantallaMercadoControlador implements Initializable {
         imagenArticulo.setFitWidth(180);
         imagenArticulo.setFitHeight(220);
 
-        // placeholder por ahoara
-        imagenArticulo.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
+        imagenArticulo.setImage(SistemaDeJuego.cargarImagen(SistemaDeJuego.obtenerCosmeticoRuta(articulo.getTipoCosmetico()), SistemaDeJuego.nombreArchivo(articulo.getNombreArticulo()) + ".png"));
 
         Label vendedor = new Label("Vendedor: " + articulo.getNombreVendedor());
         Label nombreArticulo = new Label(articulo.getNombreArticulo());
+        nombreArticulo.getStyleClass().add("nombre-articulo");
         Label precio = new Label("💰 " + articulo.getPrecio() + " monedas");
 
         Button comprar = new Button("Comprar");

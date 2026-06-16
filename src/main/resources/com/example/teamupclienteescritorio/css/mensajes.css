@@ -1,0 +1,38 @@
+.root {
+    -fx-background-color: linear-gradient(
+            from 0% 0% to 0% 100%,
+            #1e88e5,
+            #1565c0
+    );
+    -fx-border-color: #d6a400;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.tituloMensaje {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.contenidoMensaje {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: linear-gradient(#1e88e5, #1565c0);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

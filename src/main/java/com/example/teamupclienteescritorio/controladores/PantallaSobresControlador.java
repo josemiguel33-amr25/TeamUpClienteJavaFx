@@ -71,8 +71,8 @@ public class PantallaSobresControlador implements Initializable {
         imagenFondo.fitWidthProperty().bind(root.widthProperty());
         imagenFondo.fitHeightProperty().bind(root.heightProperty());
 
-        contenedorMisSobres.setHgap(30);
-        contenedorMisSobres.setVgap(40);
+        contenedorMisSobres.setHgap(80);
+        contenedorMisSobres.setVgap(30);
         contenedorMisSobres.setAlignment(Pos.TOP_CENTER);
         contenedorMisSobres.setPadding(new Insets(50, 25, 100, 25));
 
@@ -89,20 +89,19 @@ public class PantallaSobresControlador implements Initializable {
     public void crearTarjetaSobre(SobreSimplificado sobre) {
         VBox tarjeta = new VBox();
 
-        FlowPane.setMargin(tarjeta, new Insets(50, 25, 25, 25));
+        FlowPane.setMargin(tarjeta, new Insets(10));
 
         tarjeta.setSpacing(10);
-        tarjeta.setPrefWidth(300);
-        tarjeta.setPrefHeight(500);
+        tarjeta.setPrefWidth(250);
+        tarjeta.setPrefHeight(420);
         tarjeta.setAlignment(Pos.CENTER);
         tarjeta.setMinHeight(Region.USE_PREF_SIZE);
 
         ImageView imagenSobre = new ImageView();
-        imagenSobre.setFitWidth(220);
-        imagenSobre.setFitHeight(320);
+        imagenSobre.setFitWidth(180);
+        imagenSobre.setFitHeight(280);
 
-        // cuando haga el servidor http pues cambiaremos esto
-        imagenSobre.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
+        imagenSobre.setImage(SistemaDeJuego.cargarImagen("sobres", SistemaDeJuego.nombreArchivo(sobre.getNombre()) + ".png"));
 
         Label nombre = new Label(sobre.getNombre());
         Label precio = new Label("Precio: " + sobre.getPrecio());

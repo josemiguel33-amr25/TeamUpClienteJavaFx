@@ -114,10 +114,33 @@ public class ProcesadorMensajes {
                 case "cambiarCosmetico":
                     procesarCambiarCosmetico(status, mensajeServidor);
                     break;
+                case "actualizarFoto":
+                    procesarCambiarFotoPerfil(status, mensajeServidor);
+                    break;
+                case "votarJugadores":
+                    procesarVotacionJugadores(status, mensajeServidor);
+                    break;
+                case "recogerRecompensas":
+                    procesarRecogerRecompensa(status, mensajeServidor);
+                    break;
             }
         } catch (Exception em) {
             System.out.println("TeamUp|Error|EM5 " + em.getMessage());
         }
+    }
+
+    public void procesarRecogerRecompensa(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+        SistemaDeJuego.cerrarPopup();
+    }
+
+    public void procesarVotacionJugadores(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
+        SistemaDeJuego.cerrarPopup();
+    }
+
+    public void procesarCambiarFotoPerfil(String status, String mensajeServidor) {
+        SistemaDeJuego.abrirMensaje(mensajeServidor);
     }
 
     public void procesarCambiarCosmetico(String status, String mensajeServidor) {
@@ -215,6 +238,7 @@ public class ProcesadorMensajes {
         if (status.equalsIgnoreCase("perfecto")) {
             ObjectMapper mapper = new ObjectMapper();
             List<MercadoSimplificado> objetosMercado = mapper.convertValue(datosMercadoGlobal.get("elementos"), new TypeReference<List<MercadoSimplificado>>() {});
+            System.out.println("teamUp|MensajeInterno| Objeto mercado de tipo: " + objetosMercado.get(0).getTipoCosmetico() + " con nombre " + objetosMercado.get(0).getNombreArticulo());
             Sesion.getSesion().setObjetosMercadosGlobal(objetosMercado);
             SistemaDeJuego.cambiarPantalla("pantallaMercado.fxml");
         } else
@@ -245,6 +269,7 @@ public class ProcesadorMensajes {
     public void procesarAbrirSobre(String status, String mensajeServidor, String codigo, String nombreCosmetico, String rareza) {
         if (status.equalsIgnoreCase("perfecto")) {
             SistemaDeJuego.abrirCosmeticoSobre(nombreCosmetico, rareza, nombreCosmetico); // la ruta imagen es el tercer argumento es el mismo nombre que el cosmetico porque asi refenciaremos a la imagen en el servidor http
+            SistemaDeJuego.abrirMensaje(mensajeServidor);
             pedirMisSobres();
         } else
             SistemaDeJuego.abrirMensaje(mensajeServidor);
@@ -285,14 +310,14 @@ public class ProcesadorMensajes {
     }
 
     private void procesarPartidosUsuario(String status, String mensajeServidor, String codigo, Map<String,Object> datosPartidos)  {
-        if (status.equalsIgnoreCase("perfecto")) {
-            ObjectMapper mapper = new ObjectMapper();
-            List<PartidoSimplificado> partidos = mapper.convertValue(datosPartidos.get("partidos"), new TypeReference<List<PartidoSimplificado>>() {});
-            Sesion.getSesion().setPartidos(partidos);
-            SistemaDeJuego.cambiarPantalla("pantallaMisPartidos.fxml");
-        } else {
-            SistemaDeJuego.abrirMensaje(mensajeServidor);
-        }
+            if (status.equalsIgnoreCase("perfecto")) {
+                ObjectMapper mapper = new ObjectMapper();
+                List<PartidoSimplificado> partidos = mapper.convertValue(datosPartidos.get("partidos"), new TypeReference<List<PartidoSimplificado>>() {
+                });
+                Sesion.getSesion().setPartidos(partidos);
+                SistemaDeJuego.cambiarPantalla("pantallaMisPartidos.fxml");
+            } else
+                SistemaDeJuego.abrirMensaje(mensajeServidor);
     }
 
 

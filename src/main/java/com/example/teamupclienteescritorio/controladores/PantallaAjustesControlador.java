@@ -1,5 +1,6 @@
 package com.example.teamupclienteescritorio.controladores;
 
+import com.example.teamupclienteescritorio.utilidades.SistemaDeJuego;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -57,6 +58,7 @@ public class PantallaAjustesControlador implements Initializable {
             fos.close();
 
             System.out.println("TeamUp|MensajeInterno|Properties actualizadas");
+            SistemaDeJuego.abrirMensaje("Configuracion actualizada");
 
         } catch (Exception em) {
             System.out.println("TeamUp|Error|EM4");

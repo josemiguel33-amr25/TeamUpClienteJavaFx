@@ -20,6 +20,7 @@ public class InicioTeamUp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(InicioTeamUp.class.getResource("pantallaCarga.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        scene.getStylesheets().add(SistemaDeJuego.class.getResource("/com/example/teamupclienteescritorio/css/estilos.css").toExternalForm());
 
         stage.setTitle("TeamUp V.1");
 
@@ -31,10 +32,13 @@ public class InicioTeamUp extends Application {
 
                 SistemaDeJuego.crearCliente();
 
-                if (SistemaDeJuego.cliente.isConectado())
+
+                if (SistemaDeJuego.cliente.isConectado() && SistemaDeJuego.comprobarServidorHttp())
                     SistemaDeJuego.cambiarPantalla("pantallaLogReg.fxml");
-                else
+                else if (!SistemaDeJuego.cliente.isConectado())
                     SistemaDeJuego.abrirMensaje("No te has podido conectar al servidor porque no se encuentra disponible, ajusta la direccion en ajustes");
+                else if (!SistemaDeJuego.comprobarServidorHttp())
+                    SistemaDeJuego.abrirMensaje("No te has podido conectar al servidor http porque o no se encuentra disponible o la direccion es incorrecta");
             }
         });
 

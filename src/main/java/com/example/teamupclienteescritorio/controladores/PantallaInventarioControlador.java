@@ -88,8 +88,10 @@ public class PantallaInventarioControlador implements Initializable {
         }
     }
 
+
     private void crearTarjetaCosmetico(CosmeticoSimplificado cosmetico) {
         VBox tarjeta = new VBox();
+        tarjeta.getStyleClass().add("tarjeta-cosmetico");
 
         FlowPane.setMargin(tarjeta, new Insets(20, 20, 30, 20));
 
@@ -102,7 +104,7 @@ public class PantallaInventarioControlador implements Initializable {
         ImageView imagenArticulo = new ImageView();
         imagenArticulo.setFitWidth(180);
         imagenArticulo.setFitHeight(220);
-        imagenArticulo.setImage(new Image(getClass().getResourceAsStream("/com/example/teamupclienteescritorio/imagenes/logo.jpg")));
+        imagenArticulo.setImage(SistemaDeJuego.cargarImagen(SistemaDeJuego.obtenerCosmeticoRuta(cosmetico.getTipo()), SistemaDeJuego.nombreArchivo(cosmetico.getTituloCosmetico()) + ".png"));
 
         Label nombreArticulo = new Label(cosmetico.getTituloCosmetico());
         Label rareza = new Label("Rareza: " + cosmetico.getRareza());

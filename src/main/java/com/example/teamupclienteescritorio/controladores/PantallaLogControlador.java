@@ -68,15 +68,16 @@ public class PantallaLogControlador implements Initializable {
         mensajePosicion111.setVisible(false);
 
         String correo = correoElectronico.getText().trim();
+        System.out.println("TeamUp|MensajeInterno| Correo " + correo );
         String password = contrasenia.getText();
 
         if (correo.isEmpty()) {
-            mensajePosicion11.setVisible(true);
+            SistemaDeJuego.abrirMensaje("Introduce un correo electronico valido");
             return;
         }
 
         if (password.isEmpty()) {
-            mensajePosicion111.setVisible(true);
+            SistemaDeJuego.abrirMensaje("Introduce una contraseña valida");
             return;
         }
 
